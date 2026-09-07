@@ -1,0 +1,1312 @@
+2026-09-06 13:22:29.862 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-09-06 13:22:30.120 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 13:22:30.123 +05:30 [INF] Hosting environment: Development
+2026-09-06 13:22:30.124 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 13:23:51.357 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 13:23:51.402 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 13:23:51.512 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 13:23:51.513 +05:30 [INF] Hosting environment: Development
+2026-09-06 13:23:51.515 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 13:23:53.552 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger - null null
+2026-09-06 13:23:53.830 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger - 301 null null 279.8814ms
+2026-09-06 13:23:53.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 13:23:53.945 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 108.6613ms
+2026-09-06 13:23:53.974 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.css - null null
+2026-09-06 13:23:53.975 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/swagger-ui-bundle.js - null null
+2026-09-06 13:23:53.976 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 13:23:53.975 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 13:23:53.976 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 13:23:53.994 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 19.1937ms
+2026-09-06 13:23:53.974 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/swagger-ui.css - null null
+2026-09-06 13:23:54.010 +05:30 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2026-09-06 13:23:54.021 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 45.2115ms
+2026-09-06 13:23:54.024 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.css - 200 202 text/css 49.3424ms
+2026-09-06 13:23:54.037 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-09-06 13:23:53.975 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/swagger-ui-standalone-preset.js - null null
+2026-09-06 13:23:54.064 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/swagger-ui.css - 200 152034 text/css 89.1807ms
+2026-09-06 13:23:54.083 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-09-06 13:23:54.083 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-09-06 13:23:54.087 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/swagger-ui-standalone-preset.js - 200 230293 text/javascript 112.4039ms
+2026-09-06 13:23:54.095 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/swagger-ui-bundle.js - 200 1452753 text/javascript 120.5077ms
+2026-09-06 13:23:54.133 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 157.4041ms
+2026-09-06 13:23:54.318 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 13:23:54.343 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.5729ms
+2026-09-06 13:24:22.766 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 13:24:22.783 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 13:24:22.794 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 13:24:22.842 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:24:22.865 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 13:24:22.895 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 45.2619ms
+2026-09-06 13:24:22.897 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 13:24:22.898 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 117.4478ms
+2026-09-06 13:24:22.903 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 136.3375ms
+2026-09-06 13:27:40.326 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 13:27:40.337 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 12.0117ms
+2026-09-06 13:27:40.390 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 13:27:40.392 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 13:27:40.399 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 8.9215ms
+2026-09-06 13:27:40.390 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 13:27:40.419 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 28.8392ms
+2026-09-06 13:27:40.422 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.3462ms
+2026-09-06 13:27:40.537 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 13:27:40.564 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.9271ms
+2026-09-06 13:28:18.713 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 13:28:18.719 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:28:18.729 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:28:18.731 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:28:18.735 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:28:18.750 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:28:19.163 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-09-06 13:28:19.199 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 446.2396ms
+2026-09-06 13:28:19.202 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:28:19.204 +05:30 [INF] Response: POST /api/Chat/chat - Status: 400 - Duration: 484.7605ms
+2026-09-06 13:28:19.207 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 400 null application/problem+json; charset=utf-8 493.5442ms
+2026-09-06 13:28:49.199 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 33
+2026-09-06 13:28:49.210 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:28:49.213 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:28:49.215 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:28:49.217 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:28:49.219 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:28:49.243 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 13:28:49.348 +05:30 [INF] Streaming chat message: Hi How are you
+2026-09-06 13:28:49.369 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:28:49.379 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:28:51.452 +05:30 [INF] Received HTTP response headers after 2065.2407ms - 404
+2026-09-06 13:28:51.459 +05:30 [INF] End processing HTTP request after 2092.552ms - 404
+2026-09-06 13:28:51.669 +05:30 [ERR] Error in StreamChatAsync
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+2026-09-06 13:28:52.114 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 2892.8379ms
+2026-09-06 13:28:52.120 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:28:52.197 +05:30 [ERR] Unhandled exception occurred
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnTryWrite(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at AiAgentPlatform.Api.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Middleware\ErrorHandlingMiddleware.cs:line 22
+2026-09-06 13:28:52.219 +05:30 [INF] Response: POST /api/Chat/chat - Status: 500 - Duration: 3008.6206ms
+2026-09-06 13:28:52.223 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 500 null application/json; charset=utf-8 3024.0337ms
+2026-09-06 13:29:05.346 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 33
+2026-09-06 13:29:05.352 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:29:05.354 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:29:05.356 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:29:05.357 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:29:05.360 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:29:05.364 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 13:29:05.367 +05:30 [INF] Streaming chat message: Hi How are you
+2026-09-06 13:29:05.369 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:29:05.371 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:29:05.378 +05:30 [INF] Received HTTP response headers after 4.4383ms - 404
+2026-09-06 13:29:05.379 +05:30 [INF] End processing HTTP request after 10.823ms - 404
+2026-09-06 13:29:05.458 +05:30 [ERR] Error in StreamChatAsync
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+2026-09-06 13:29:05.529 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 166.0437ms
+2026-09-06 13:29:05.531 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:29:05.578 +05:30 [ERR] Unhandled exception occurred
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnTryWrite(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at AiAgentPlatform.Api.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Middleware\ErrorHandlingMiddleware.cs:line 22
+2026-09-06 13:29:05.591 +05:30 [INF] Response: POST /api/Chat/chat - Status: 500 - Duration: 238.8645ms
+2026-09-06 13:29:05.595 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 500 null application/json; charset=utf-8 248.924ms
+2026-09-06 13:31:12.308 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 33
+2026-09-06 13:31:12.327 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:31:12.329 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:31:12.332 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:31:12.335 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:31:12.338 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:31:12.344 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 13:31:12.346 +05:30 [INF] Streaming chat message: Hi How are you
+2026-09-06 13:31:12.348 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:31:12.350 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:31:14.401 +05:30 [INF] Received HTTP response headers after 2049.7899ms - 404
+2026-09-06 13:31:14.411 +05:30 [INF] End processing HTTP request after 2063.2258ms - 404
+2026-09-06 13:31:14.536 +05:30 [ERR] Error in StreamChatAsync
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+2026-09-06 13:31:14.608 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 2265.5863ms
+2026-09-06 13:31:14.611 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:31:14.652 +05:30 [ERR] Unhandled exception occurred
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnTryWrite(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at AiAgentPlatform.Api.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Middleware\ErrorHandlingMiddleware.cs:line 22
+2026-09-06 13:31:14.664 +05:30 [INF] Response: POST /api/Chat/chat - Status: 500 - Duration: 2337.2849ms
+2026-09-06 13:31:14.671 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 500 null application/json; charset=utf-8 2362.5151ms
+2026-09-06 13:44:35.787 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 13:44:35.885 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 13:44:36.827 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 13:44:36.831 +05:30 [INF] Hosting environment: Development
+2026-09-06 13:44:36.833 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 13:44:37.579 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 13:44:37.944 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 365.1153ms
+2026-09-06 13:44:37.983 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 13:44:37.983 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 13:44:37.983 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 13:44:38.008 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 24.5743ms
+2026-09-06 13:44:38.042 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 59.2138ms
+2026-09-06 13:44:38.088 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 105.2611ms
+2026-09-06 13:44:38.160 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 13:44:38.196 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.6759ms
+2026-09-06 13:44:57.868 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 37
+2026-09-06 13:44:57.886 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:44:57.897 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:44:57.899 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:44:57.906 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:44:57.956 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:44:58.050 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 13:44:58.069 +05:30 [INF] Streaming chat message: Hello,wat ru doing
+2026-09-06 13:44:58.087 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:44:58.094 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:45:00.141 +05:30 [INF] Received HTTP response headers after 2040.5362ms - 404
+2026-09-06 13:45:00.145 +05:30 [INF] End processing HTTP request after 2060.5081ms - 404
+2026-09-06 13:45:00.296 +05:30 [ERR] Error in StreamChatAsync
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+2026-09-06 13:45:00.518 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 2555.3607ms
+2026-09-06 13:45:00.523 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:45:00.602 +05:30 [ERR] Unhandled exception occurred
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnTryWrite(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at AiAgentPlatform.Api.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Middleware\ErrorHandlingMiddleware.cs:line 22
+2026-09-06 13:45:00.627 +05:30 [INF] Response: POST /api/Chat/chat - Status: 500 - Duration: 2742.707ms
+2026-09-06 13:45:00.631 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 500 null application/json; charset=utf-8 2763.002ms
+2026-09-06 13:45:13.233 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 13:45:13.251 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 13:45:13.255 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 13:45:13.263 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:45:13.269 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 13:45:13.289 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 23.2372ms
+2026-09-06 13:45:13.293 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 13:45:13.295 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 44.1264ms
+2026-09-06 13:45:13.297 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 64.486ms
+2026-09-06 13:45:47.369 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 37
+2026-09-06 13:45:47.378 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:45:47.397 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:45:47.400 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:45:47.403 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:45:47.405 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:45:47.414 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 13:46:23.617 +05:30 [INF] Streaming chat message: Hello,wat ru doing
+2026-09-06 13:46:42.746 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:46:42.748 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 13:46:44.818 +05:30 [INF] Received HTTP response headers after 2068.6006ms - 404
+2026-09-06 13:46:44.820 +05:30 [INF] End processing HTTP request after 2074.6905ms - 404
+2026-09-06 13:47:09.242 +05:30 [ERR] Error in StreamChatAsync
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+2026-09-06 13:47:09.323 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 81915.2561ms
+2026-09-06 13:47:09.326 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:47:09.377 +05:30 [ERR] Unhandled exception occurred
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OllamaLlmProvider.cs:line 60
+   at AiAgentPlatform.Api.Services.OllamaLlmProvider.StreamResponseAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\ChatService.cs:line 45
+   at AiAgentPlatform.Api.Services.ChatService.StreamChatAsync(String message)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Controllers\ChatController.cs:line 32
+   at AiAgentPlatform.Api.Controllers.ChatController.Chat(ChatRequest request)+System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult()
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IAsyncEnumerableOfTConverter`2.OnTryWrite(Utf8JsonWriter writer, TAsyncEnumerable value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultFilters>g__Awaited|28_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at AiAgentPlatform.Api.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Middleware\ErrorHandlingMiddleware.cs:line 22
+2026-09-06 13:47:09.389 +05:30 [INF] Response: POST /api/Chat/chat - Status: 500 - Duration: 82010.5615ms
+2026-09-06 13:47:09.394 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 500 null application/json; charset=utf-8 82024.9519ms
+2026-09-06 13:50:22.688 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 13:50:22.729 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 13:50:22.864 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 13:50:22.866 +05:30 [INF] Hosting environment: Development
+2026-09-06 13:50:22.868 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 13:50:24.215 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 13:50:24.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 249.3443ms
+2026-09-06 13:50:24.493 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 13:50:24.493 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 13:50:24.494 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 13:50:24.516 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 21.856ms
+2026-09-06 13:50:24.530 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 36.9759ms
+2026-09-06 13:50:24.583 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 89.1438ms
+2026-09-06 13:50:24.652 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 13:50:24.682 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.3565ms
+2026-09-06 13:50:43.101 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 38
+2026-09-06 13:50:43.115 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:50:43.128 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:50:43.130 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:50:43.136 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:50:43.166 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:50:43.235 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 13:50:50.845 +05:30 [INF] Streaming chat message: hello wat r u doing
+2026-09-06 13:51:14.466 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 13:51:14.472 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 13:51:16.706 +05:30 [INF] Received HTTP response headers after 2228.4558ms - 404
+2026-09-06 13:51:16.710 +05:30 [INF] End processing HTTP request after 2246.0984ms - 404
+2026-09-06 13:51:28.250 +05:30 [ERR] Error streaming from OpenAI
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OpenAiLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OpenAiLlmProvider.cs:line 63
+2026-09-06 13:51:28.307 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 45134.4721ms
+2026-09-06 13:51:28.309 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:51:28.311 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 45197.6853ms
+2026-09-06 13:51:28.315 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 45213.0978ms
+2026-09-06 13:54:04.784 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 13:54:04.851 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 13:54:05.094 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 13:54:05.098 +05:30 [INF] Hosting environment: Development
+2026-09-06 13:54:05.100 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 13:54:06.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 13:54:07.077 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 332.2862ms
+2026-09-06 13:54:07.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 13:54:07.102 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 13:54:07.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 13:54:07.116 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 18.1036ms
+2026-09-06 13:54:07.166 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 68.4498ms
+2026-09-06 13:54:07.218 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 116.4568ms
+2026-09-06 13:54:07.298 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 13:54:07.332 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.2291ms
+2026-09-06 13:54:13.308 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/config - null null
+2026-09-06 13:54:13.326 +05:30 [INF] Incoming request: GET /api/Chat/config
+2026-09-06 13:54:13.336 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetConfig (AiAgentPlatform.Api)'
+2026-09-06 13:54:13.390 +05:30 [INF] Route matched with {action = "GetConfig", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] GetConfig(Microsoft.Extensions.Configuration.IConfiguration) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:54:13.454 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-06 13:54:13.483 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetConfig (AiAgentPlatform.Api) in 84.6178ms
+2026-09-06 13:54:13.485 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetConfig (AiAgentPlatform.Api)'
+2026-09-06 13:54:13.487 +05:30 [INF] Response: GET /api/Chat/config - Status: 200 - Duration: 163.9105ms
+2026-09-06 13:54:13.489 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/config - 200 null application/json; charset=utf-8 181.1086ms
+2026-09-06 13:54:44.673 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 13:54:44.680 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 13:54:44.689 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:54:44.691 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:54:44.694 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:54:44.700 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 13:54:44.740 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 13:54:49.448 +05:30 [INF] Streaming chat message: hi wat r u doing
+2026-09-06 13:54:49.462 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 13:54:49.467 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 13:54:50.823 +05:30 [INF] Received HTTP response headers after 1351.6694ms - 429
+2026-09-06 13:54:50.826 +05:30 [INF] End processing HTTP request after 1365.5146ms - 429
+2026-09-06 13:54:50.904 +05:30 [ERR] Error streaming from OpenAI
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 429 (Too Many Requests).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OpenAiLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OpenAiLlmProvider.cs:line 63
+2026-09-06 13:54:52.590 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 7885.5675ms
+2026-09-06 13:54:52.592 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:54:52.594 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 7914.5442ms
+2026-09-06 13:54:52.598 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 7924.6918ms
+2026-09-06 13:55:11.537 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/AI/chat - application/json 21
+2026-09-06 13:55:11.544 +05:30 [INF] Incoming request: POST /api/AI/chat
+2026-09-06 13:55:11.547 +05:30 [INF] CORS policy execution failed.
+2026-09-06 13:55:11.549 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 13:55:11.551 +05:30 [INF] Executing endpoint 'AIController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:55:11.567 +05:30 [INF] Route matched with {action = "Chat", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Chat(ChatRequest) on controller AIController (AiAgentPlatform.Api).
+2026-09-06 13:55:11.575 +05:30 [INF] Executed action AIController.Chat (AiAgentPlatform.Api) in 5.2912ms
+2026-09-06 13:55:11.580 +05:30 [INF] Executed endpoint 'AIController.Chat (AiAgentPlatform.Api)'
+2026-09-06 13:55:11.605 +05:30 [ERR] Unhandled exception occurred
+System.InvalidOperationException: Unable to resolve service for type 'AiAgentPlatform.Api.Services.AgentOrchestratorService' while attempting to activate 'AIController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method16(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at AiAgentPlatform.Api.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Middleware\ErrorHandlingMiddleware.cs:line 22
+2026-09-06 13:55:11.622 +05:30 [INF] Response: POST /api/AI/chat - Status: 500 - Duration: 78.561ms
+2026-09-06 13:55:11.625 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/AI/chat - 500 null application/json; charset=utf-8 88.4806ms
+2026-09-06 21:06:48.308 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 21:06:48.373 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 21:06:48.507 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 21:06:48.509 +05:30 [INF] Hosting environment: Development
+2026-09-06 21:06:48.511 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 21:06:50.109 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 21:06:50.415 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 307.9538ms
+2026-09-06 21:06:50.440 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 21:06:50.440 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 21:06:50.440 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 21:06:50.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 23.3965ms
+2026-09-06 21:06:50.471 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 30.5088ms
+2026-09-06 21:06:50.523 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 82.4256ms
+2026-09-06 21:06:50.595 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 21:06:50.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.1696ms
+2026-09-06 21:07:11.339 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 28
+2026-09-06 21:07:11.361 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:07:11.370 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:07:11.373 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:07:11.383 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:07:11.438 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:07:11.646 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:07:23.795 +05:30 [INF] Streaming chat message: hello wat
+2026-09-06 21:08:18.096 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:08:18.109 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:08:20.056 +05:30 [INF] Received HTTP response headers after 1938.9228ms - 429
+2026-09-06 21:08:20.062 +05:30 [INF] End processing HTTP request after 1972.7361ms - 429
+2026-09-06 21:11:16.608 +05:30 [ERR] Error streaming from OpenAI
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 429 (Too Many Requests).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OpenAiLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OpenAiLlmProvider.cs:line 63
+2026-09-06 21:11:16.703 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 245254.1817ms
+2026-09-06 21:11:16.706 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:11:16.709 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 245351.632ms
+2026-09-06 21:11:16.712 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 245373.2417ms
+2026-09-06 21:12:32.027 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 21:12:32.072 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 21:12:32.200 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 21:12:32.202 +05:30 [INF] Hosting environment: Development
+2026-09-06 21:12:32.203 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 21:12:33.907 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 21:12:34.162 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 259.004ms
+2026-09-06 21:12:34.180 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 21:12:34.180 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 21:12:34.180 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 21:12:34.197 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 16.7724ms
+2026-09-06 21:12:34.226 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 46.3601ms
+2026-09-06 21:12:34.266 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 85.6585ms
+2026-09-06 21:12:34.332 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 21:12:34.360 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.5766ms
+2026-09-06 21:12:49.979 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 38
+2026-09-06 21:12:49.994 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:12:50.003 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:12:50.005 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:12:50.009 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:12:50.041 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:12:50.106 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:12:56.360 +05:30 [INF] Streaming chat message: hello wat r u doing
+2026-09-06 21:13:16.684 +05:30 [INF] Sending request to OpenAI (attempt 1/3).
+2026-09-06 21:13:17.295 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:13:17.300 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:13:18.338 +05:30 [INF] Received HTTP response headers after 1031.3163ms - 429
+2026-09-06 21:13:18.342 +05:30 [INF] End processing HTTP request after 1048.4258ms - 429
+2026-09-06 21:13:25.637 +05:30 [WRN] Rate limited (429). Retrying in 1000ms (attempt 1/3).
+2026-09-06 21:13:32.879 +05:30 [INF] Sending request to OpenAI (attempt 2/3).
+2026-09-06 21:13:33.496 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:13:33.500 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:13:34.263 +05:30 [INF] Received HTTP response headers after 759.1871ms - 429
+2026-09-06 21:13:34.272 +05:30 [INF] End processing HTTP request after 776.0884ms - 429
+2026-09-06 21:14:33.435 +05:30 [WRN] Rate limited (429). Retrying in 2000ms (attempt 2/3).
+2026-09-06 21:14:38.735 +05:30 [INF] Sending request to OpenAI (attempt 3/3).
+2026-09-06 21:14:38.935 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:14:38.937 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions
+2026-09-06 21:14:39.675 +05:30 [INF] Received HTTP response headers after 735.9039ms - 429
+2026-09-06 21:14:39.682 +05:30 [INF] End processing HTTP request after 747.3054ms - 429
+2026-09-06 21:14:43.459 +05:30 [ERR] Error streaming from OpenAI
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 429 (Too Many Requests).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at AiAgentPlatform.Api.Services.OpenAiLlmProvider.StreamResponseAsync(String message)+MoveNext() in E:\ai-agent-platform\backend\AiAgentPlatform.Api\Services\OpenAiLlmProvider.cs:line 179
+2026-09-06 21:14:49.201 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 119153.5966ms
+2026-09-06 21:14:49.205 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:14:49.208 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 119215.9969ms
+2026-09-06 21:14:49.211 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 119231.8941ms
+2026-09-06 21:33:47.698 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 21:33:47.792 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 21:33:48.089 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 21:33:48.092 +05:30 [INF] Hosting environment: Development
+2026-09-06 21:33:48.096 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 21:33:50.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 21:33:50.498 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 413.0286ms
+2026-09-06 21:33:50.549 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 21:33:50.549 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 21:33:50.549 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 21:33:50.578 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 27.8282ms
+2026-09-06 21:33:50.590 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 41.2373ms
+2026-09-06 21:33:50.665 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 116.0574ms
+2026-09-06 21:33:50.768 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 21:33:50.805 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.6683ms
+2026-09-06 21:34:15.766 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 21:34:15.868 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:34:15.874 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:34:15.875 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:34:15.885 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:34:15.934 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:34:15.957 +05:30 [INF] OllamaLlmProvider initialized. Endpoint: https://api.openai.com/v1/chat/completions, Model: gpt-3.5-turbo
+2026-09-06 21:34:16.028 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:34:24.902 +05:30 [INF] Streaming chat message: HI wat r u doing
+2026-09-06 21:34:33.490 +05:30 [INF] Generating response for message: HI wat r u doing
+2026-09-06 21:34:43.378 +05:30 [INF] POST request to: https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:34:48.879 +05:30 [INF] Sending request to Ollama (attempt 1/3).
+2026-09-06 21:34:49.291 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:34:49.299 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:34:49.894 +05:30 [INF] Received HTTP response headers after 589.401ms - 404
+2026-09-06 21:34:49.899 +05:30 [INF] End processing HTTP request after 611.3954ms - 404
+2026-09-06 21:41:12.906 +05:30 [INF] Ollama response status: "NotFound"
+2026-09-06 21:41:12.974 +05:30 [ERR] Ollama error ("NotFound"): {
+  "error": {
+    "message": "Invalid URL (POST /v1/chat/completions/api/generate)",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+2026-09-06 21:41:12.990 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 417049.0057ms
+2026-09-06 21:41:12.992 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:41:12.995 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 417128.1681ms
+2026-09-06 21:41:12.998 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 417232.4676ms
+2026-09-06 21:41:33.869 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 21:41:33.877 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:41:33.879 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:41:33.881 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:41:33.882 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:41:33.884 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:41:33.887 +05:30 [INF] OllamaLlmProvider initialized. Endpoint: https://api.openai.com/v1/chat/completions, Model: gpt-3.5-turbo
+2026-09-06 21:41:33.893 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:41:37.652 +05:30 [INF] Streaming chat message: HI wat r u doing
+2026-09-06 21:41:40.581 +05:30 [INF] Generating response for message: HI wat r u doing
+2026-09-06 21:43:24.370 +05:30 [INF] POST request to: https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:43:24.376 +05:30 [INF] Sending request to Ollama (attempt 1/3).
+2026-09-06 21:43:24.378 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:43:24.380 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:43:25.507 +05:30 [INF] Received HTTP response headers after 1125.8696ms - 404
+2026-09-06 21:43:25.510 +05:30 [INF] End processing HTTP request after 1131.7564ms - 404
+2026-09-06 21:43:25.512 +05:30 [INF] Ollama response status: "NotFound"
+2026-09-06 21:43:25.514 +05:30 [ERR] Ollama error ("NotFound"): {
+  "error": {
+    "message": "Invalid URL (POST /v1/chat/completions/api/generate)",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+2026-09-06 21:43:25.518 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 111631.5995ms
+2026-09-06 21:43:25.522 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:43:25.524 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 111647.5663ms
+2026-09-06 21:43:25.527 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 111657.9972ms
+2026-09-06 21:43:28.999 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 21:43:29.004 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:43:29.007 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:43:29.008 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:43:29.010 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:43:29.012 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:43:29.019 +05:30 [INF] OllamaLlmProvider initialized. Endpoint: https://api.openai.com/v1/chat/completions, Model: gpt-3.5-turbo
+2026-09-06 21:43:29.021 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:43:33.992 +05:30 [INF] Streaming chat message: HI wat r u doing
+2026-09-06 21:43:43.117 +05:30 [INF] Generating response for message: HI wat r u doing
+2026-09-06 21:44:11.345 +05:30 [INF] POST request to: https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:44:17.916 +05:30 [INF] Sending request to Ollama (attempt 1/3).
+2026-09-06 21:44:18.702 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:44:18.704 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:44:19.089 +05:30 [INF] Received HTTP response headers after 382.1165ms - 404
+2026-09-06 21:44:19.093 +05:30 [INF] End processing HTTP request after 391.5941ms - 404
+2026-09-06 21:44:25.271 +05:30 [INF] Ollama response status: "NotFound"
+2026-09-06 21:44:29.844 +05:30 [ERR] Ollama error ("NotFound"): {
+  "error": {
+    "message": "Invalid URL (POST /v1/chat/completions/api/generate)",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+2026-09-06 21:44:40.111 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 71095.5152ms
+2026-09-06 21:44:40.115 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:44:40.117 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 71112.659ms
+2026-09-06 21:44:40.120 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 71120.8771ms
+2026-09-06 21:44:57.704 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 21:44:57.711 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:44:57.713 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:44:57.714 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:44:57.716 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:44:57.718 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:44:57.723 +05:30 [INF] OllamaLlmProvider initialized. Endpoint: https://api.openai.com/v1/chat/completions, Model: gpt-3.5-turbo
+2026-09-06 21:44:57.726 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:45:00.709 +05:30 [INF] Streaming chat message: HI wat r u doing
+2026-09-06 21:45:03.391 +05:30 [INF] Generating response for message: HI wat r u doing
+2026-09-06 21:50:59.650 +05:30 [INF] Configuring LLM Provider: openai
+2026-09-06 21:50:59.698 +05:30 [INF] Using OpenAI provider
+2026-09-06 21:51:00.128 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 21:51:00.133 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 21:51:00.240 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 21:51:00.347 +05:30 [INF] Hosting environment: Development
+2026-09-06 21:51:00.349 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 21:51:02.017 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 21:51:02.253 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 237.4114ms
+2026-09-06 21:51:02.279 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 21:51:02.279 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 21:51:02.279 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 21:51:02.303 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 23.2439ms
+2026-09-06 21:51:02.317 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 37.4504ms
+2026-09-06 21:51:02.356 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.3773ms
+2026-09-06 21:51:02.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 21:51:02.443 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.8278ms
+2026-09-06 21:51:22.133 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 36
+2026-09-06 21:51:22.158 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:51:22.166 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:51:22.168 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:51:22.173 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:51:22.203 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:51:22.212 +05:30 [INF] OllamaLlmProvider initialized. Endpoint: https://api.openai.com/v1/chat/completions, Model: gpt-3.5-turbo
+2026-09-06 21:51:22.265 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:51:27.551 +05:30 [INF] Streaming chat message: hi wat r  u doing
+2026-09-06 21:51:32.675 +05:30 [INF] Generating response for message: hi wat r  u doing
+2026-09-06 21:51:38.169 +05:30 [INF] POST request to: https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:51:42.372 +05:30 [INF] Sending request to Ollama (attempt 1/3).
+2026-09-06 21:51:42.865 +05:30 [INF] Start processing HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:51:42.870 +05:30 [INF] Sending HTTP request POST https://api.openai.com/v1/chat/completions/api/generate
+2026-09-06 21:51:43.432 +05:30 [INF] Received HTTP response headers after 558.4589ms - 404
+2026-09-06 21:51:43.435 +05:30 [INF] End processing HTTP request after 572.7921ms - 404
+2026-09-06 21:54:33.112 +05:30 [INF] Ollama response status: "NotFound"
+2026-09-06 21:54:33.121 +05:30 [ERR] Ollama error ("NotFound"): {
+  "error": {
+    "message": "Invalid URL (POST /v1/chat/completions/api/generate)",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+2026-09-06 21:54:33.168 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 190957.6797ms
+2026-09-06 21:54:33.170 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:54:33.174 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 191018.1936ms
+2026-09-06 21:54:33.177 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 191043.6564ms
+2026-09-06 21:55:37.293 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 21:55:37.340 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 21:55:37.722 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 21:55:37.727 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 21:55:37.851 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 21:55:37.853 +05:30 [INF] Hosting environment: Development
+2026-09-06 21:55:37.854 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 21:55:38.932 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 21:55:39.190 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 265.2294ms
+2026-09-06 21:55:39.219 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 21:55:39.219 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 21:55:39.219 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 21:55:39.232 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 12.41ms
+2026-09-06 21:55:39.242 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 22.6742ms
+2026-09-06 21:55:39.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.2908ms
+2026-09-06 21:55:39.354 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 21:55:39.377 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.4421ms
+2026-09-06 21:55:52.640 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 35
+2026-09-06 21:55:52.657 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 21:55:52.665 +05:30 [INF] CORS policy execution failed.
+2026-09-06 21:55:52.667 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 21:55:52.674 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 21:55:52.701 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 21:55:52.768 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 21:55:56.376 +05:30 [INF] Streaming chat message: hi wat r u doing
+2026-09-06 21:55:59.225 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-06 21:56:02.125 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-06 21:56:07.876 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 21:56:07.883 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 21:56:52.562 +05:30 [INF] Received HTTP response headers after 44613.179ms - 200
+2026-09-06 21:56:52.712 +05:30 [INF] End processing HTTP request after 44838.3685ms - 200
+2026-09-06 22:02:01.969 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:02:02.046 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:02:03.453 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:02:03.458 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:02:03.597 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:02:03.600 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:02:03.602 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:02:06.862 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:02:07.268 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 408.3313ms
+2026-09-06 22:02:07.368 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:02:07.368 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:02:07.368 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:02:07.419 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 49.8151ms
+2026-09-06 22:02:07.436 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 67.7466ms
+2026-09-06 22:02:07.493 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 125.01ms
+2026-09-06 22:02:07.571 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:02:07.604 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.2034ms
+2026-09-06 22:02:26.380 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 33
+2026-09-06 22:02:26.397 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 22:02:26.405 +05:30 [INF] CORS policy execution failed.
+2026-09-06 22:02:26.407 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 22:02:26.417 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:02:26.468 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:02:26.658 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__4'.
+2026-09-06 22:02:31.086 +05:30 [INF] Streaming chat message: hi how are you
+2026-09-06 22:02:33.962 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-06 22:02:35.684 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-06 22:02:36.861 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:02:36.868 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:03:02.436 +05:30 [INF] Received HTTP response headers after 25504.963ms - 200
+2026-09-06 22:03:02.582 +05:30 [INF] End processing HTTP request after 25722.3888ms - 200
+2026-09-06 22:04:11.545 +05:30 [INF] Ollama response received in 95201ms
+2026-09-06 22:05:00.891 +05:30 [INF] Processed 10 tokens in 144693ms
+2026-09-06 22:05:00.909 +05:30 [INF] Processed 20 tokens in 144710ms
+2026-09-06 22:05:01.056 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 154573.3902ms
+2026-09-06 22:05:01.073 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:05:01.083 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 154683.4471ms
+2026-09-06 22:05:01.103 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 154717.5343ms
+2026-09-06 22:14:58.347 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:14:58.398 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:14:59.159 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:14:59.163 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:14:59.272 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:14:59.274 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:14:59.276 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:15:01.075 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:15:01.378 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 304.3018ms
+2026-09-06 22:15:01.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:15:01.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:15:01.410 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:15:01.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 29.7303ms
+2026-09-06 22:15:01.455 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 45.5596ms
+2026-09-06 22:15:01.501 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.2535ms
+2026-09-06 22:15:01.561 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:15:01.584 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - AiAgentPlatform.Api.Controllers.ChatRequest. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$ChatRequest" for type "$AiAgentPlatform.Api.Controllers.ChatRequest". The same schemaId is already used for type "$ChatRequest"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForParameter(Type modelType, SchemaRepository schemaRepository, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAndFilterContext(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-06 22:15:01.609 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 48.6609ms
+2026-09-06 22:16:12.168 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:16:12.214 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:16:13.186 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:16:13.190 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:16:13.293 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:16:13.295 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:16:13.297 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:16:14.233 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:16:14.448 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 214.3224ms
+2026-09-06 22:16:14.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:16:14.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:16:14.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:16:14.490 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 16.1053ms
+2026-09-06 22:16:14.499 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 25.452ms
+2026-09-06 22:16:14.539 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.6362ms
+2026-09-06 22:16:14.601 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:16:14.618 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - AiAgentPlatform.Api.Controllers.ChatRequest. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$ChatRequest" for type "$AiAgentPlatform.Api.Controllers.ChatRequest". The same schemaId is already used for type "$ChatRequest"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForParameter(Type modelType, SchemaRepository schemaRepository, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAndFilterContext(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-06 22:16:14.641 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 40.3126ms
+2026-09-06 22:16:54.670 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:16:54.719 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:16:55.086 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:16:55.090 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:16:55.191 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:16:55.192 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:16:55.194 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:16:56.022 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:16:56.242 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 224.4587ms
+2026-09-06 22:16:56.264 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:16:56.265 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:16:56.265 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:16:56.286 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 21.0478ms
+2026-09-06 22:16:56.297 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 32.6706ms
+2026-09-06 22:16:56.337 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.8101ms
+2026-09-06 22:16:56.393 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:16:56.411 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - AiAgentPlatform.Api.Controllers.ChatRequest. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$ChatRequest" for type "$AiAgentPlatform.Api.Controllers.ChatRequest". The same schemaId is already used for type "$ChatRequest"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForParameter(Type modelType, SchemaRepository schemaRepository, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAndFilterContext(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-06 22:16:56.430 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 37.051ms
+2026-09-06 22:18:25.942 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:18:25.988 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:18:26.360 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:18:26.364 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:18:26.467 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:18:26.469 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:18:26.470 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:18:26.927 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:18:27.156 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 230.0215ms
+2026-09-06 22:18:27.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:18:27.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:18:27.186 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:18:27.204 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 18.0655ms
+2026-09-06 22:18:27.217 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 32.3211ms
+2026-09-06 22:18:27.253 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.87ms
+2026-09-06 22:18:27.312 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:18:27.328 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - AiAgentPlatform.Api.Controllers.ChatRequest. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$ChatRequest" for type "$AiAgentPlatform.Api.Controllers.ChatRequest". The same schemaId is already used for type "$ChatRequest"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForParameter(Type modelType, SchemaRepository schemaRepository, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAndFilterContext(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-06 22:18:27.347 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 35.6976ms
+2026-09-06 22:23:19.452 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:23:19.500 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:23:19.860 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:23:19.863 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:23:19.969 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:23:19.971 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:23:19.972 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:23:21.550 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:23:21.794 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 244.5425ms
+2026-09-06 22:23:21.818 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:23:21.818 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:23:21.818 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:23:21.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 10.0924ms
+2026-09-06 22:23:21.858 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 40.8279ms
+2026-09-06 22:23:21.892 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.6183ms
+2026-09-06 22:23:21.953 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:23:21.971 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - AiAgentPlatform.Api.Controllers.ChatRequest. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$ChatRequest" for type "$AiAgentPlatform.Api.Controllers.ChatRequest". The same schemaId is already used for type "$ChatRequest"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForParameter(Type modelType, SchemaRepository schemaRepository, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAndFilterContext(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-06 22:23:21.991 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 37.8157ms
+2026-09-06 22:29:23.071 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:29:23.118 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:29:23.478 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:29:23.483 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:29:23.585 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:29:23.587 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:29:23.589 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:29:24.579 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:29:24.840 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 261.4797ms
+2026-09-06 22:29:24.865 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:29:24.865 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:29:24.865 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:29:24.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 13.6531ms
+2026-09-06 22:29:24.900 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 34.2748ms
+2026-09-06 22:29:24.936 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.9304ms
+2026-09-06 22:29:24.998 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:29:25.016 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - AiAgentPlatform.Api.Controllers.ChatRequest. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$ChatRequest" for type "$AiAgentPlatform.Api.Controllers.ChatRequest". The same schemaId is already used for type "$ChatRequest"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForParameter(Type modelType, SchemaRepository schemaRepository, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAndFilterContext(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-06 22:29:25.036 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 38.2735ms
+2026-09-06 22:31:16.076 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:31:16.124 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:31:16.482 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:31:16.485 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:31:16.586 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:31:16.587 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:31:16.589 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:31:17.447 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:31:17.727 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 281.3272ms
+2026-09-06 22:31:17.752 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:31:17.753 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:31:17.754 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:31:17.763 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 10.9375ms
+2026-09-06 22:31:17.790 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 36.2426ms
+2026-09-06 22:31:17.826 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.9901ms
+2026-09-06 22:31:17.889 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:31:17.910 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.9871ms
+2026-09-06 22:31:45.997 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 55
+2026-09-06 22:31:46.017 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 22:31:46.025 +05:30 [INF] CORS policy execution failed.
+2026-09-06 22:31:46.027 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 22:31:46.034 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:31:46.082 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:31:46.171 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 22:31:48.437 +05:30 [INF] Streaming chat message: hi wat r u doing
+2026-09-06 22:31:48.441 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-06 22:31:48.448 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-06 22:31:48.452 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:31:48.457 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:32:30.277 +05:30 [INF] Received HTTP response headers after 41794.3547ms - 200
+2026-09-06 22:32:30.309 +05:30 [INF] End processing HTTP request after 41858.7086ms - 200
+2026-09-06 22:32:47.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:32:47.844 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:32:47.870 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:32:48.056 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:32:48.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:32:48.161 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 87.4801ms
+2026-09-06 22:32:48.166 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:32:48.169 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 328.1344ms
+2026-09-06 22:32:48.172 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 401.5679ms
+2026-09-06 22:32:53.346 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:32:53.395 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:32:53.401 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:32:53.404 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:32:53.420 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:32:53.430 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 17.5902ms
+2026-09-06 22:32:54.295 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:32:54.312 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 917.3786ms
+2026-09-06 22:32:54.319 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 972.7539ms
+2026-09-06 22:32:55.533 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:32:55.545 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:32:55.548 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:32:55.551 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:32:55.559 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:32:55.563 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 5.7098ms
+2026-09-06 22:32:55.567 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:32:55.572 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 26.839ms
+2026-09-06 22:32:55.580 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 48.0859ms
+2026-09-06 22:33:33.917 +05:30 [INF] Ollama response received in 105462ms
+2026-09-06 22:33:34.051 +05:30 [INF] Processed 10 tokens in 105601ms
+2026-09-06 22:33:34.056 +05:30 [INF] Processed 20 tokens in 105606ms
+2026-09-06 22:33:34.073 +05:30 [INF] Processed 30 tokens in 105623ms
+2026-09-06 22:33:34.076 +05:30 [INF] Processed 40 tokens in 105626ms
+2026-09-06 22:33:34.079 +05:30 [INF] Processed 50 tokens in 105629ms
+2026-09-06 22:33:34.082 +05:30 [INF] Processed 60 tokens in 105632ms
+2026-09-06 22:33:34.084 +05:30 [INF] Processed 70 tokens in 105634ms
+2026-09-06 22:33:34.087 +05:30 [INF] Processed 80 tokens in 105637ms
+2026-09-06 22:33:34.089 +05:30 [INF] Processed 90 tokens in 105639ms
+2026-09-06 22:33:34.091 +05:30 [INF] Processed 100 tokens in 105641ms
+2026-09-06 22:33:34.094 +05:30 [INF] Processed 110 tokens in 105643ms
+2026-09-06 22:33:34.097 +05:30 [INF] Processed 120 tokens in 105647ms
+2026-09-06 22:33:34.100 +05:30 [INF] Processed 130 tokens in 105650ms
+2026-09-06 22:33:34.102 +05:30 [INF] Processed 140 tokens in 105652ms
+2026-09-06 22:33:34.104 +05:30 [INF] Processed 150 tokens in 105654ms
+2026-09-06 22:33:34.107 +05:30 [INF] Processed 160 tokens in 105657ms
+2026-09-06 22:33:34.109 +05:30 [INF] Processed 170 tokens in 105659ms
+2026-09-06 22:33:34.116 +05:30 [INF] Processed 180 tokens in 105666ms
+2026-09-06 22:33:34.583 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 108494.7666ms
+2026-09-06 22:33:34.596 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:33:34.601 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 108585.7114ms
+2026-09-06 22:33:34.612 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 108612.9309ms
+2026-09-06 22:34:40.236 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:34:40.272 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:34:40.277 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:40.294 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:34:40.335 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:34:40.340 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 42.4951ms
+2026-09-06 22:34:40.347 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:40.349 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 82.2908ms
+2026-09-06 22:34:40.353 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 116.578ms
+2026-09-06 22:34:43.241 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:34:43.250 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:34:43.252 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:43.255 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:34:43.263 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:34:43.266 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 6.8494ms
+2026-09-06 22:34:43.269 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:43.271 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 20.4164ms
+2026-09-06 22:34:43.273 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 33.2801ms
+2026-09-06 22:34:43.973 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:34:43.992 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:34:43.994 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:44.001 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:34:44.007 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:34:44.009 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 2.9626ms
+2026-09-06 22:34:44.011 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:44.012 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 20.3449ms
+2026-09-06 22:34:44.018 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 44.0142ms
+2026-09-06 22:34:44.549 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:34:44.555 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:34:44.559 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:44.561 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:34:44.566 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:34:44.569 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 4.0432ms
+2026-09-06 22:34:44.571 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:44.573 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 17.805ms
+2026-09-06 22:34:44.575 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 26.6878ms
+2026-09-06 22:34:45.169 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:34:45.177 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:34:45.181 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:45.185 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:34:45.189 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:34:45.191 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 2.426ms
+2026-09-06 22:34:45.193 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:45.195 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 17.9278ms
+2026-09-06 22:34:45.199 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 29.9539ms
+2026-09-06 22:34:59.920 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:34:59.927 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:34:59.930 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:34:59.932 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:35:10.470 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:35:10.472 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 10537.3312ms
+2026-09-06 22:35:10.476 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:35:14.675 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 14332.2795ms
+2026-09-06 22:35:16.221 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 16300.6808ms
+2026-09-06 22:39:16.768 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-06 22:39:16.816 +05:30 [INF] Using Ollama provider (default)
+2026-09-06 22:39:17.908 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-06 22:39:17.912 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-06 22:39:18.016 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-06 22:39:18.017 +05:30 [INF] Hosting environment: Development
+2026-09-06 22:39:18.019 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-06 22:39:19.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-06 22:39:19.816 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 263.7296ms
+2026-09-06 22:39:19.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-06 22:39:19.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-06 22:39:19.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-06 22:39:19.871 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 18.5881ms
+2026-09-06 22:39:19.885 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 33.5774ms
+2026-09-06 22:39:19.927 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.6214ms
+2026-09-06 22:39:19.995 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-06 22:39:20.021 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.0014ms
+2026-09-06 22:39:44.436 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 58
+2026-09-06 22:39:44.451 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 22:39:44.459 +05:30 [INF] CORS policy execution failed.
+2026-09-06 22:39:44.462 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 22:39:44.466 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:39:44.505 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:39:44.574 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 22:39:46.480 +05:30 [INF] Streaming chat message: Hi wat r doing
+2026-09-06 22:39:46.486 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-06 22:39:46.494 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-06 22:39:46.497 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:39:46.502 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:40:36.651 +05:30 [INF] Received HTTP response headers after 49945.7358ms - 200
+2026-09-06 22:40:36.756 +05:30 [INF] End processing HTTP request after 50258.2791ms - 200
+2026-09-06 22:40:55.098 +05:30 [INF] Ollama response received in 68598ms
+2026-09-06 22:40:55.273 +05:30 [INF] Processed 10 tokens in 68778ms
+2026-09-06 22:40:55.281 +05:30 [INF] Processed 20 tokens in 68785ms
+2026-09-06 22:40:55.284 +05:30 [INF] Processed 30 tokens in 68789ms
+2026-09-06 22:40:55.287 +05:30 [INF] Processed 40 tokens in 68791ms
+2026-09-06 22:40:55.289 +05:30 [INF] Processed 50 tokens in 68793ms
+2026-09-06 22:40:55.451 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 70928.0869ms
+2026-09-06 22:40:55.471 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:40:55.480 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 71029.57ms
+2026-09-06 22:40:55.507 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 71066.369ms
+2026-09-06 22:46:44.215 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 47
+2026-09-06 22:46:44.263 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 22:46:44.279 +05:30 [INF] CORS policy execution failed.
+2026-09-06 22:46:44.281 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 22:46:44.290 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:46:44.643 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:46:44.691 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 22:46:47.298 +05:30 [INF] Streaming chat message: Hi 
+2026-09-06 22:46:47.300 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-06 22:46:47.309 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-06 22:46:47.318 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:46:47.320 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:47:28.197 +05:30 [INF] Received HTTP response headers after 40856.7402ms - 200
+2026-09-06 22:47:28.560 +05:30 [INF] End processing HTTP request after 41244.0533ms - 200
+2026-09-06 22:48:16.293 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:48:16.355 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:48:16.393 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:48:16.552 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:48:24.839 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:48:25.059 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 8495.1821ms
+2026-09-06 22:48:25.066 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:48:25.069 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 8715.7235ms
+2026-09-06 22:48:25.076 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 8807.6434ms
+2026-09-06 22:48:39.357 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:48:39.368 +05:30 [INF] Incoming request: DELETE /api/Chat/history
+2026-09-06 22:48:39.373 +05:30 [INF] CORS policy execution failed.
+2026-09-06 22:48:39.374 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 22:48:39.377 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.ClearHistory (AiAgentPlatform.Api)'
+2026-09-06 22:48:39.391 +05:30 [INF] Route matched with {action = "ClearHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult ClearHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:48:39.408 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-06 22:48:39.432 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.ClearHistory (AiAgentPlatform.Api) in 37.7554ms
+2026-09-06 22:48:39.439 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.ClearHistory (AiAgentPlatform.Api)'
+2026-09-06 22:48:39.442 +05:30 [INF] Response: DELETE /api/Chat/history - Status: 200 - Duration: 75.7066ms
+2026-09-06 22:48:39.544 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 187.554ms
+2026-09-06 22:48:40.186 +05:30 [INF] Ollama response received in 112875ms
+2026-09-06 22:48:40.196 +05:30 [INF] Processed 10 tokens in 112885ms
+2026-09-06 22:48:40.199 +05:30 [INF] Processed 20 tokens in 112888ms
+2026-09-06 22:48:40.206 +05:30 [INF] Processed 30 tokens in 112895ms
+2026-09-06 22:48:40.209 +05:30 [INF] Processed 40 tokens in 112898ms
+2026-09-06 22:48:40.213 +05:30 [INF] Processed 50 tokens in 112902ms
+2026-09-06 22:48:40.217 +05:30 [INF] Processed 60 tokens in 112906ms
+2026-09-06 22:48:40.221 +05:30 [INF] Processed 70 tokens in 112910ms
+2026-09-06 22:48:40.224 +05:30 [INF] Processed 80 tokens in 112913ms
+2026-09-06 22:48:40.227 +05:30 [INF] Processed 90 tokens in 112916ms
+2026-09-06 22:48:40.230 +05:30 [INF] Processed 100 tokens in 112919ms
+2026-09-06 22:48:40.235 +05:30 [INF] Processed 110 tokens in 112924ms
+2026-09-06 22:48:40.238 +05:30 [INF] Processed 120 tokens in 112927ms
+2026-09-06 22:48:40.241 +05:30 [INF] Processed 130 tokens in 112930ms
+2026-09-06 22:48:40.245 +05:30 [INF] Processed 140 tokens in 112934ms
+2026-09-06 22:48:40.252 +05:30 [INF] Processed 150 tokens in 112941ms
+2026-09-06 22:48:40.255 +05:30 [INF] Processed 160 tokens in 112944ms
+2026-09-06 22:48:40.258 +05:30 [INF] Processed 170 tokens in 112947ms
+2026-09-06 22:48:40.261 +05:30 [INF] Processed 180 tokens in 112950ms
+2026-09-06 22:48:40.267 +05:30 [INF] Processed 190 tokens in 112956ms
+2026-09-06 22:48:40.270 +05:30 [INF] Processed 200 tokens in 112959ms
+2026-09-06 22:48:40.273 +05:30 [INF] Processed 210 tokens in 112962ms
+2026-09-06 22:48:40.290 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 115639.435ms
+2026-09-06 22:48:40.294 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:48:40.297 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 116033.9007ms
+2026-09-06 22:48:40.304 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 116089.2116ms
+2026-09-06 22:48:45.638 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:48:45.644 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:48:45.647 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:48:45.649 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:48:47.558 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:48:47.560 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 1908.2218ms
+2026-09-06 22:48:47.564 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:48:47.566 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 1922.0116ms
+2026-09-06 22:48:47.569 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 1930.3868ms
+2026-09-06 22:49:10.897 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 47
+2026-09-06 22:49:10.904 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-06 22:49:10.906 +05:30 [INF] CORS policy execution failed.
+2026-09-06 22:49:10.908 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-06 22:49:10.912 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:49:10.914 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:49:10.939 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-06 22:49:12.918 +05:30 [INF] Streaming chat message: Hi 
+2026-09-06 22:49:12.926 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-06 22:49:12.932 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-06 22:49:12.940 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:49:12.942 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-06 22:49:13.814 +05:30 [INF] Received HTTP response headers after 870.9253ms - 200
+2026-09-06 22:49:13.817 +05:30 [INF] End processing HTTP request after 878.3101ms - 200
+2026-09-06 22:49:17.320 +05:30 [INF] Ollama response received in 4385ms
+2026-09-06 22:49:17.323 +05:30 [INF] Processed 10 tokens in 4389ms
+2026-09-06 22:49:17.327 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 6406.9028ms
+2026-09-06 22:49:17.330 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-06 22:49:17.332 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 6427.3989ms
+2026-09-06 22:49:17.335 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 6437.978ms
+2026-09-06 22:49:20.369 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-06 22:49:20.387 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-06 22:49:20.395 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:49:20.401 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-06 22:49:22.213 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-06 22:49:22.217 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 1806.1183ms
+2026-09-06 22:49:22.220 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-06 22:49:22.222 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 1835.2132ms
+2026-09-06 22:49:22.225 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 1856.2088ms

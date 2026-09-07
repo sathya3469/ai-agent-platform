@@ -1,0 +1,238 @@
+2026-09-07 16:37:52.189 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-07 16:37:52.284 +05:30 [INF] Using Ollama provider (default)
+2026-09-07 16:37:55.085 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-07 16:37:55.091 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-07 16:37:55.280 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 16:37:55.283 +05:30 [INF] Hosting environment: Development
+2026-09-07 16:37:55.285 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-07 16:37:58.905 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-07 16:37:59.461 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 554.9422ms
+2026-09-07 16:37:59.528 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-07 16:37:59.528 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-07 16:37:59.528 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 16:37:59.551 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 23.0247ms
+2026-09-07 16:37:59.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 58.0529ms
+2026-09-07 16:37:59.727 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 198.8549ms
+2026-09-07 16:37:59.849 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-07 16:37:59.933 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 81.9195ms
+2026-09-07 16:44:23.070 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 46
+2026-09-07 16:44:23.106 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-07 16:44:23.113 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:44:23.115 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-07 16:44:23.126 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 16:44:23.183 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:44:23.595 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-07 16:44:33.446 +05:30 [INF] Streaming chat message: hi
+2026-09-07 16:44:33.452 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-07 16:44:33.458 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-07 16:44:33.464 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-07 16:44:33.470 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-07 16:45:28.930 +05:30 [INF] Received HTTP response headers after 55315.7621ms - 200
+2026-09-07 16:45:29.336 +05:30 [INF] End processing HTTP request after 55873.9998ms - 200
+2026-09-07 16:45:32.188 +05:30 [INF] Ollama response received in 58723ms
+2026-09-07 16:45:32.493 +05:30 [INF] Processed 10 tokens in 59032ms
+2026-09-07 16:45:32.863 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 69649.3216ms
+2026-09-07 16:45:32.895 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 16:45:32.918 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 69810.3256ms
+2026-09-07 16:45:33.051 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 69932.2947ms
+2026-09-07 16:51:38.190 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 16:51:38.373 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 16:51:38.409 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:51:38.411 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:51:38.425 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:51:38.736 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:51:47.009 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 16:51:47.451 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 8698.5359ms
+2026-09-07 16:51:47.461 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 16:51:47.461 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:51:47.467 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 9099.2424ms
+2026-09-07 16:51:47.468 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 16:51:47.479 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 9294.5557ms
+2026-09-07 16:51:47.492 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:51:47.495 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:51:47.498 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:51:47.510 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:52:56.691 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 16:52:56.725 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 69211.4601ms
+2026-09-07 16:52:56.733 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:52:56.739 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 69270.5177ms
+2026-09-07 16:52:56.774 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - null null
+2026-09-07 16:52:56.774 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 69313.2119ms
+2026-09-07 16:52:56.782 +05:30 [INF] Incoming request: OPTIONS /api/Chat/chat
+2026-09-07 16:52:56.775 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - null null
+2026-09-07 16:52:56.775 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 16:52:56.785 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:52:56.790 +05:30 [INF] Incoming request: OPTIONS /api/Chat/chat
+2026-09-07 16:52:56.792 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 16:52:56.793 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:52:56.795 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:52:56.797 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:52:56.800 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:52:56.801 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:52:56.804 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:52:56.805 +05:30 [INF] Response: OPTIONS /api/Chat/chat - Status: 204 - Duration: 23.615ms
+2026-09-07 16:52:56.805 +05:30 [INF] Response: OPTIONS /api/Chat/chat - Status: 204 - Duration: 16.2858ms
+2026-09-07 16:52:56.805 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:52:56.808 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - 499 null null 34.9334ms
+2026-09-07 16:52:56.810 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - 204 null null 35.4712ms
+2026-09-07 16:52:59.568 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 16:52:59.579 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 2766.4788ms
+2026-09-07 16:52:59.582 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:52:59.583 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 2790.7855ms
+2026-09-07 16:52:59.585 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 16:52:59.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 2811.6466ms
+2026-09-07 16:52:59.590 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 16:52:59.596 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:52:59.597 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:52:59.598 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:52:59.600 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:53:00.778 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 16:53:00.825 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 1223.0622ms
+2026-09-07 16:53:00.829 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:53:00.832 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 1241.4966ms
+2026-09-07 16:53:00.835 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 1250.3217ms
+2026-09-07 16:53:01.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-07 16:53:02.022 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 103.6453ms
+2026-09-07 16:53:02.155 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-07 16:53:02.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 16:53:02.171 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-07 16:53:02.188 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 32.4577ms
+2026-09-07 16:53:02.191 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 23.1134ms
+2026-09-07 16:53:02.230 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.8515ms
+2026-09-07 16:53:02.528 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-07 16:53:02.556 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/favicon-32x32.png - null null
+2026-09-07 16:53:02.573 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.9201ms
+2026-09-07 16:53:02.612 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-07 16:53:02.614 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/favicon-32x32.png - 200 628 image/png 58.459ms
+2026-09-07 16:53:43.351 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - null null
+2026-09-07 16:53:43.357 +05:30 [INF] Incoming request: OPTIONS /api/Chat/chat
+2026-09-07 16:53:43.360 +05:30 [INF] CORS policy execution failed.
+2026-09-07 16:53:43.362 +05:30 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2026-09-07 16:53:43.363 +05:30 [INF] Response: OPTIONS /api/Chat/chat - Status: 204 - Duration: 6.2633ms
+2026-09-07 16:53:43.368 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - 204 null null 16.3316ms
+2026-09-07 16:54:39.874 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 16:54:39.881 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 16:54:39.883 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:54:39.891 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:54:39.895 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 16:54:39.899 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 5.3592ms
+2026-09-07 16:54:39.901 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:54:39.905 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 24.4537ms
+2026-09-07 16:54:39.909 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 34.4244ms
+2026-09-07 16:57:07.219 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 16:57:07.224 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 16:57:07.226 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:57:07.227 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 16:57:07.230 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 16:57:07.240 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 10.6775ms
+2026-09-07 16:57:07.242 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 16:57:07.244 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 19.7223ms
+2026-09-07 16:57:07.247 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 27.4484ms
+2026-09-07 17:02:40.877 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-07 17:02:40.964 +05:30 [INF] Using Ollama provider (default)
+2026-09-07 17:02:42.455 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-07 17:02:42.458 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-07 17:02:42.590 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 17:02:42.593 +05:30 [INF] Hosting environment: Development
+2026-09-07 17:02:42.596 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-07 17:02:45.392 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-07 17:02:45.665 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 272.9734ms
+2026-09-07 17:02:45.718 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-07 17:02:45.718 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 17:02:45.728 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 9.6654ms
+2026-09-07 17:02:45.750 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 31.8434ms
+2026-09-07 17:02:45.757 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-07 17:02:45.829 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.5688ms
+2026-09-07 17:02:45.982 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-07 17:02:46.008 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.8515ms
+2026-09-07 17:02:54.733 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 46
+2026-09-07 17:02:54.746 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-07 17:02:54.756 +05:30 [INF] CORS policy execution failed.
+2026-09-07 17:02:54.757 +05:30 [INF] Request origin https://localhost:7005 does not have permission to access the resource.
+2026-09-07 17:02:54.763 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 17:02:54.803 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 17:02:54.885 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-07 17:02:54.902 +05:30 [INF] Streaming chat message: hi
+2026-09-07 17:02:54.906 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-07 17:02:54.912 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-07 17:02:54.918 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-07 17:02:54.925 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-07 17:03:40.394 +05:30 [INF] Received HTTP response headers after 45258.5588ms - 200
+2026-09-07 17:03:40.499 +05:30 [INF] End processing HTTP request after 45584.1835ms - 200
+2026-09-07 17:03:43.735 +05:30 [INF] Ollama response received in 48814ms
+2026-09-07 17:03:43.828 +05:30 [INF] Processed 10 tokens in 48914ms
+2026-09-07 17:03:44.171 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 49340.5387ms
+2026-09-07 17:03:44.200 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 17:03:44.223 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 49471.4593ms
+2026-09-07 17:03:44.274 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 49528.1877ms
+2026-09-07 17:04:12.814 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 17:04:12.916 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 17:04:12.943 +05:30 [INF] CORS policy execution successful.
+2026-09-07 17:04:12.948 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 17:04:13.111 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 17:04:13.135 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 17:04:13.265 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 148.5505ms
+2026-09-07 17:04:13.267 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 17:04:13.270 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 353.4366ms
+2026-09-07 17:04:13.270 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/api/Chat/history - null null
+2026-09-07 17:04:13.273 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 459.4851ms
+2026-09-07 17:04:13.282 +05:30 [INF] Incoming request: GET /api/Chat/history
+2026-09-07 17:04:13.297 +05:30 [INF] CORS policy execution successful.
+2026-09-07 17:04:13.299 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 17:04:13.303 +05:30 [INF] Route matched with {action = "GetHistory", controller = "Chat"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AiAgentPlatform.Api.Models.Message]] GetHistory() on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 17:04:13.306 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.ObjectModel.ReadOnlyCollection`1[[AiAgentPlatform.Api.Models.Message, AiAgentPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-07 17:04:13.308 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api) in 2.3503ms
+2026-09-07 17:04:13.310 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.GetHistory (AiAgentPlatform.Api)'
+2026-09-07 17:04:13.312 +05:30 [INF] Response: GET /api/Chat/history - Status: 200 - Duration: 29.8927ms
+2026-09-07 17:04:13.315 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/api/Chat/history - 200 null application/json; charset=utf-8 44.3389ms
+2026-09-07 17:04:18.839 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - null null
+2026-09-07 17:04:18.849 +05:30 [INF] Incoming request: OPTIONS /api/Chat/chat
+2026-09-07 17:04:18.852 +05:30 [INF] CORS policy execution successful.
+2026-09-07 17:04:18.874 +05:30 [INF] Response: OPTIONS /api/Chat/chat - Status: 204 - Duration: 23.963ms
+2026-09-07 17:04:18.878 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - 204 null null 38.3137ms
+2026-09-07 17:04:18.887 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 37
+2026-09-07 17:04:18.891 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-07 17:04:18.893 +05:30 [INF] CORS policy execution successful.
+2026-09-07 17:04:18.894 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 17:04:18.895 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 17:04:18.933 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-07 17:04:18.936 +05:30 [INF] Streaming chat message: hi
+2026-09-07 17:04:18.938 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-07 17:04:18.945 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-07 17:04:18.950 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-07 17:04:18.951 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-07 17:04:21.099 +05:30 [INF] Received HTTP response headers after 2146.4364ms - 200
+2026-09-07 17:04:21.102 +05:30 [INF] End processing HTTP request after 2152.318ms - 200
+2026-09-07 17:04:25.840 +05:30 [INF] Ollama response received in 6893ms
+2026-09-07 17:04:25.853 +05:30 [INF] Processed 10 tokens in 6906ms
+2026-09-07 17:04:25.861 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 6961.7195ms
+2026-09-07 17:04:25.876 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 17:04:25.885 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 6994.3305ms
+2026-09-07 17:04:25.893 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 7006.4785ms
+2026-09-07 17:04:39.755 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - null null
+2026-09-07 17:04:39.761 +05:30 [INF] Incoming request: OPTIONS /api/Chat/chat
+2026-09-07 17:04:39.764 +05:30 [INF] CORS policy execution successful.
+2026-09-07 17:04:39.765 +05:30 [INF] Response: OPTIONS /api/Chat/chat - Status: 204 - Duration: 4.1699ms
+2026-09-07 17:04:39.768 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7005/api/Chat/chat - 204 null null 13.0457ms
+2026-09-07 17:04:39.770 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7005/api/Chat/chat - application/json 58
+2026-09-07 17:04:39.776 +05:30 [INF] Incoming request: POST /api/Chat/chat
+2026-09-07 17:04:39.778 +05:30 [INF] CORS policy execution successful.
+2026-09-07 17:04:39.779 +05:30 [INF] Executing endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 17:04:39.780 +05:30 [INF] Route matched with {action = "Chat", controller = "Chat"}. Executing controller action with signature System.Collections.Generic.IAsyncEnumerable`1[System.String] Chat(AiAgentPlatform.Api.Controllers.ChatRequest) on controller AiAgentPlatform.Api.Controllers.ChatController (AiAgentPlatform.Api).
+2026-09-07 17:04:39.783 +05:30 [INF] Executing ObjectResult, writing value of type 'AiAgentPlatform.Api.Controllers.ChatController+<Chat>d__3'.
+2026-09-07 17:04:39.785 +05:30 [INF] Streaming chat message: iam testing the service
+2026-09-07 17:04:39.786 +05:30 [INF] Calling Ollama at http://localhost:11434 with model neural-chat
+2026-09-07 17:04:39.788 +05:30 [INF] POST request to: http://localhost:11434/api/generate
+2026-09-07 17:04:39.789 +05:30 [INF] Start processing HTTP request POST http://localhost:11434/api/generate
+2026-09-07 17:04:39.791 +05:30 [INF] Sending HTTP request POST http://localhost:11434/api/generate
+2026-09-07 17:04:41.027 +05:30 [INF] Received HTTP response headers after 1234.466ms - 200
+2026-09-07 17:04:41.030 +05:30 [INF] End processing HTTP request after 1241.3746ms - 200
+2026-09-07 17:04:53.298 +05:30 [INF] Ollama response received in 13508ms
+2026-09-07 17:04:53.301 +05:30 [INF] Processed 10 tokens in 13511ms
+2026-09-07 17:04:53.304 +05:30 [INF] Processed 20 tokens in 13514ms
+2026-09-07 17:04:53.306 +05:30 [INF] Processed 30 tokens in 13516ms
+2026-09-07 17:04:53.308 +05:30 [INF] Processed 40 tokens in 13518ms
+2026-09-07 17:04:53.310 +05:30 [INF] Executed action AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api) in 13527.1136ms
+2026-09-07 17:04:53.313 +05:30 [INF] Executed endpoint 'AiAgentPlatform.Api.Controllers.ChatController.Chat (AiAgentPlatform.Api)'
+2026-09-07 17:04:53.314 +05:30 [INF] Response: POST /api/Chat/chat - Status: 200 - Duration: 13538.2447ms
+2026-09-07 17:04:53.318 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7005/api/Chat/chat - 200 null application/json; charset=utf-8 13547.2525ms
