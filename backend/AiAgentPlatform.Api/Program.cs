@@ -23,7 +23,10 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     });
-builder.Services.AddSingleton<ChatService>();      
+builder.Services.AddSingleton<ChatService>();
+builder.Services.AddScoped<IEmbeddingService, EmbeddingService>();
+builder.Services.AddScoped<ChromaDbService>();
+builder.Services.AddScoped<RagService>();
 builder.Services.Configure<LlmConfig>(builder.Configuration.GetSection("LLM"));
 builder.Services.AddAgentFramework();
 // Add CORS

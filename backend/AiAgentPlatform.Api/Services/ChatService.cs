@@ -7,12 +7,15 @@ public class ChatService
 {
     private readonly ILlmProvider _llmProvider;
     private readonly ILogger<ChatService> _logger;
+    private readonly RagService _ragService;
     private readonly List<Message> _conversationHistory = new();
+    private bool _useRag = true;
 
-    public ChatService(ILlmProvider llmProvider, ILogger<ChatService> logger)
+    public ChatService(ILlmProvider llmProvider, ILogger<ChatService> logger, RagService ragService)
     {
         _llmProvider = llmProvider;
         _logger = logger;
+        _ragService = ragService;
     }
 
     public async Task<string> ChatAsync(string message)
@@ -22,7 +25,22 @@ public class ChatService
 
         try
         {
-            var response = await _llmProvider.GenerateResponseAsync(message);
+            // Augment message with RAG context if enabled
+            var augmentedMessage = message;
+            if (_useRag)
+            {
+                try
+                {
+                    augmentedMessage = await _ragService.GetAugmentedPromptAsync(message, topK: 5);
+                    _logger.LogInformation("Message augmented with RAG context");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "RAG augmentation failed, using original message");
+                }
+            }
+
+            var response = await _llmProvider.GenerateResponseAsync(augmentedMessage);
             _conversationHistory.Add(new Message { Role = "assistant", Content = response });
             return response;
         }
@@ -42,7 +60,22 @@ public class ChatService
         var tokens = new List<string>();
         try
         {
-            await foreach (var token in _llmProvider.StreamResponseAsync(message))
+            // Augment message with RAG context if enabled
+            var augmentedMessage = message;
+            if (_useRag)
+            {
+                try
+                {
+                    augmentedMessage = await _ragService.GetAugmentedPromptAsync(message, topK: 5);
+                    _logger.LogInformation("Message augmented with RAG context");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "RAG augmentation failed, using original message");
+                }
+            }
+
+            await foreach (var token in _llmProvider.StreamResponseAsync(augmentedMessage))
             {
                 tokens.Add(token);
                 fullResponse += token;
@@ -70,4 +103,12 @@ public class ChatService
     {
         _conversationHistory.Clear();
     }
+
+    public void SetRagEnabled(bool enabled)
+    {
+        _useRag = enabled;
+        _logger.LogInformation("RAG mode set to: {Enabled}", enabled);
+    }
+
+    public bool IsRagEnabled() => _useRag;
 }
