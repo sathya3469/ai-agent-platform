@@ -29,7 +29,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess,
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('http://localhost:5000/api/document/upload', {
+      const response = await fetch('http://localhost:5243/api/document/upload', {
         method: 'POST',
         body: formData,
       });

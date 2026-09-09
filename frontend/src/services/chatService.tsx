@@ -7,13 +7,13 @@ type HistoryMessage = Omit<Message, "timestamp"> & {
 
 const API_BASE_URL =
   (import.meta.env as Record<string, string | undefined>).VITE_API_URL ||
-  "https://localhost:7005";
+  "http://localhost:5243";
 
 export async function* streamMessage(
   message: string
 ): AsyncGenerator<string, void, unknown> {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/Chat/chat`, {
+    const response = await fetch(`${API_BASE_URL}/api/chat/stream`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -101,7 +101,7 @@ export async function getHistory(): Promise<Message[]> {
 
 export async function clearHistory(): Promise<void> {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/Chat/history`, {
+    const response = await fetch(`${API_BASE_URL}/api/chat/history`, {
       method: "DELETE",
     });
 

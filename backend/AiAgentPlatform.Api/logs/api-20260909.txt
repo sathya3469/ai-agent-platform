@@ -1,0 +1,208 @@
+2026-09-09 11:54:20.478 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 11:54:20.703 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 11:55:51.781 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 11:55:51.831 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 11:55:53.095 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-09 11:55:53.099 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 11:55:53.413 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 11:55:53.415 +05:30 [INF] Hosting environment: Development
+2026-09-09 11:55:53.417 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-09 11:55:56.104 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-09 11:55:56.499 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 395.9697ms
+2026-09-09 11:55:56.664 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-09 11:55:56.664 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-09 11:55:56.666 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-09 11:55:56.686 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 21.7743ms
+2026-09-09 11:55:56.717 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 53.1913ms
+2026-09-09 11:55:56.859 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 193.2831ms
+2026-09-09 11:55:56.963 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-09 11:55:57.000 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-09 11:55:57.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 65.6214ms
+2026-09-09 12:02:40.542 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 12:02:40.609 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 12:02:41.721 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-09 12:02:41.725 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 12:02:43.053 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 12:02:43.056 +05:30 [INF] Hosting environment: Development
+2026-09-09 12:02:43.077 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-09 12:02:43.755 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-09 12:02:44.131 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 378.606ms
+2026-09-09 12:02:44.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-09 12:02:44.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-09 12:02:44.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-09 12:02:44.213 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 45.1515ms
+2026-09-09 12:02:44.237 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 69.8073ms
+2026-09-09 12:02:44.284 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 115.9073ms
+2026-09-09 12:02:44.386 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-09 12:02:44.421 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-09 12:02:44.446 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 60.1284ms
+2026-09-09 12:03:25.321 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 12:03:25.370 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 12:03:26.273 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 12:03:26.276 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 12:03:26.277 +05:30 [INF] Hosting environment: Development
+2026-09-09 12:03:26.277 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-09 12:11:57.032 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 12:11:57.114 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 12:11:58.412 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-09 12:11:58.417 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 12:11:59.522 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 12:11:59.546 +05:30 [INF] Hosting environment: Development
+2026-09-09 12:11:59.552 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-09 12:12:00.072 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-09 12:12:00.409 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 337.3189ms
+2026-09-09 12:12:00.433 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-09 12:12:00.433 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-09 12:12:00.446 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 12.99ms
+2026-09-09 12:12:00.435 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-09 12:12:00.472 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 38.798ms
+2026-09-09 12:12:00.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 108.4142ms
+2026-09-09 12:12:00.616 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-09 12:12:00.644 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-09 12:12:00.666 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 50.612ms
+2026-09-09 12:13:08.855 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 12:13:08.904 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 12:13:09.275 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-09 12:13:09.279 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 12:13:09.401 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 12:13:09.406 +05:30 [INF] Hosting environment: Development
+2026-09-09 12:13:09.408 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-09 12:13:09.994 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-09 12:13:10.239 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 252.1554ms
+2026-09-09 12:13:10.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-09 12:13:10.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-09 12:13:10.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-09 12:13:10.290 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 20.1801ms
+2026-09-09 12:13:10.301 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 32.3981ms
+2026-09-09 12:13:10.352 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.4593ms
+2026-09-09 12:13:10.427 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-09 12:13:10.450 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-09 12:13:10.467 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 40.947ms
+2026-09-09 12:13:39.238 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-09 12:13:39.254 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 15.552ms
+2026-09-09 12:13:39.290 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-09 12:13:39.291 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-09 12:13:39.298 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 7.7045ms
+2026-09-09 12:13:39.290 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-09 12:13:39.322 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 32.0686ms
+2026-09-09 12:13:39.326 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.9705ms
+2026-09-09 12:13:39.363 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-09 12:13:39.379 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/favicon-32x32.png - null null
+2026-09-09 12:13:39.388 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-09 12:13:39.409 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 46.4389ms
+2026-09-09 12:13:39.421 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-09 12:13:39.425 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/favicon-32x32.png - 200 628 image/png 46.8014ms
+2026-09-09 12:14:54.795 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 12:14:54.842 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 12:14:55.605 +05:30 [INF] Now listening on: https://localhost:7005
+2026-09-09 12:14:55.609 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 12:14:55.720 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 12:14:55.722 +05:30 [INF] Hosting environment: Development
+2026-09-09 12:14:55.724 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
+2026-09-09 12:14:58.994 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.html - null null
+2026-09-09 12:14:59.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.html - 200 null text/html;charset=utf-8 411.3155ms
+2026-09-09 12:14:59.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-09 12:14:59.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/_vs/browserLink - null null
+2026-09-09 12:14:59.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/index.js - null null
+2026-09-09 12:14:59.452 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/index.js - 200 null application/javascript;charset=utf-8 26.6152ms
+2026-09-09 12:14:59.455 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_framework/aspnetcore-browser-refresh.js - 200 14943 application/javascript; charset=utf-8 31.7398ms
+2026-09-09 12:14:59.521 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/_vs/browserLink - 200 null text/javascript; charset=UTF-8 95.1552ms
+2026-09-09 12:14:59.607 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - null null
+2026-09-09 12:14:59.641 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action AiAgentPlatform.Api.Controllers.DocumentController.UploadDocument (AiAgentPlatform.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-09 12:14:59.661 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7005/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 54.5244ms
+2026-09-09 12:15:38.885 +05:30 [INF] Configuring LLM Provider: ollama
+2026-09-09 12:15:38.935 +05:30 [INF] Using Ollama provider (default)
+2026-09-09 12:15:39.285 +05:30 [INF] Now listening on: http://localhost:5243
+2026-09-09 12:15:39.288 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-09 12:15:39.289 +05:30 [INF] Hosting environment: Development
+2026-09-09 12:15:39.289 +05:30 [INF] Content root path: E:\ai-agent-platform\backend\AiAgentPlatform.Api
