@@ -20,7 +20,7 @@ public class ChatController : ControllerBase
     /// <summary>
     /// Send a chat message and receive a streaming response.
     /// </summary>
-    [HttpPost("chat")]
+    [HttpPost("stream")]
     public async IAsyncEnumerable<string> Chat([FromBody] ChatRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.Message))
@@ -34,7 +34,11 @@ public class ChatController : ControllerBase
             yield return token;
         }
     }
-    [HttpPost("chat/full")]
+
+    /// <summary>
+    /// Send a chat message and receive full response.
+    /// </summary>
+    [HttpPost("full")]
     public async Task<ChatResponse> ChatFull([FromBody] ChatRequest request)
     {
         var message = await _chatService.ChatAsync(request.Message);
