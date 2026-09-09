@@ -21,6 +21,7 @@ public class DocumentController : ControllerBase
     /// Upload and index a document for RAG
     /// </summary>
     [HttpPost("upload")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public async Task<ActionResult<DocumentUploadResponse>> UploadDocument([FromForm] IFormFile file)
     {
         try
