@@ -1,7 +1,125 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* InputBox.css overrides */
+.input-box {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
+.input-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1px;
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-slate-500 */
+}
+
+.input-meta .flex {
+  display: flex;
+  gap: 0.25rem; /* gap-1 */
+  align-items: center;
+}
+
+.input-meta .text-red-500 {
+  color: #ef4444;
+}
+
+.input-meta .text-slate-400 {
+  color: #94a3b8;
+}
+
+.input-area {
+  position: relative;
+  margin-top: 0.75rem; /* space-y-3 */
+}
+
+.input-area textarea {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem; /* px-4 py-3 pr-14 */
+  border: 1px solid #cbd5e1; /* border-slate-300 */
+  border-radius: 0.75rem; /* rounded-xl */
+  outline: none;
+  resize: none;
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem;
+  background-color: white;
+  color: #1f2937; /* text-slate-800 */
+  placeholder-color: #94a3b8; /* placeholder-slate-400 */
+  transition: all 0.15s ease;
+  max-height: 5rem; /* max-h-28 */
+  min-height: 2.75rem; /* rows=1 equivalent */
+}
+
+.input-area textarea:focus {
+  border-color: #3b82f6; /* border-blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.input-area textarea:disabled {
+  background-color: #f8fafc; /* bg-slate-50 */
+  color: #6b7280; /* text-slate-500 */
+}
+
+.send-button {
+  position: absolute;
+  right: 0.5rem; /* right-2 */
+  top: 50%; /* top-1/2 */
+  transform: translateY(-50%); /* -translate-y-1/2 */
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.send-button:disabled {
+  color: #94a3b8; /* text-slate-300 */
+  cursor: not-allowed;
+}
+
+.send-button:enabled {
+  color: #2563eb; /* text-blue-600 */
+  background-color: rgba(59, 130, 246, 0.05); /* hover:bg-blue-50 */
+}
+
+.send-button:enabled:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.send-button:enabled:active {
+  background-color: rgba(59, 130, 246, 0.025); /* active:bg-blue-100 */
+}
+
+.tips {
+  display: flex;
+  gap: 0.5rem; /* gap-2 */
+  padding: 0 1px;
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-slate-500 */
+  margin-top: 0.5rem; /* space-y-3 */
+}
+
+.tips svg {
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  flex-shrink: 0;
+  margin-top: 0.125rem; /* mt-0.5 */
+  color: #6b7280; /* text-slate-500 */
+}
+
+.tips .font-medium {
+  font-weight: 500;
+}
+
+/* Animation delays for loading indicator */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -14,13 +132,4 @@ body,
   height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-}
-
-/* Animation delays for loading indicator */
-.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.delay-200 {
-  animation-delay: 0.2s;
 }

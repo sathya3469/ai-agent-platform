@@ -21,17 +21,23 @@ public class ChatController : ControllerBase
     /// Send a chat message and receive a streaming response.
     /// </summary>
     [HttpPost("stream")]
-    public async IAsyncEnumerable<string> Chat([FromBody] ChatRequest request)
+    public async Task Chat([FromBody] ChatRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.Message))
         {
-            yield return "Error: Message cannot be empty";
-            yield break;
+            Response.StatusCode = 400;
+            await Response.WriteAsync("Error: Message cannot be empty");
+            return;
         }
+
+        Response.ContentType = "text/plain; charset=utf-8";
+        Response.Headers["Cache-Control"] = "no-cache";
+        Response.Headers["X-Content-Type-Options"] = "nosniff";
 
         await foreach (var token in _chatService.StreamChatAsync(request.Message))
         {
-            yield return token;
+            await Response.WriteAsync(token);
+            await Response.Body.FlushAsync();
         }
     }
 

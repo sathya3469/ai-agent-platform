@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import type { Message } from "../types/chat";
 import { streamMessage, getHistory } from "../services/chatService";
 import { MessageList } from "./MessageList";
-import { InputBox } from "./InputBox";
+import { InputBox } from "./InputBoxFixed";
 
-export const ChatBox: React.FC = () => {
+interface ChatBoxProps {
+  className?: string;
+}
+
+export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Load chat history on mount
     const loadHistory = async () => {
       try {
         const history = await getHistory();
@@ -27,7 +30,6 @@ export const ChatBox: React.FC = () => {
     setError(null);
     setIsLoading(true);
 
-    // Add user message
     const userMessage: Message = {
       role: "user",
       content: messageText,
@@ -36,7 +38,6 @@ export const ChatBox: React.FC = () => {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      // Stream response from API
       let assistantContent = "";
       const assistantMessage: Message = {
         role: "assistant",
@@ -58,8 +59,7 @@ export const ChatBox: React.FC = () => {
         });
       }
     } catch (err) {
-      const errorMessage =
-        err instanceof Error ? err.message : "An error occurred";
+      const errorMessage = err instanceof Error ? err.message : "An error occurred";
       setError(errorMessage);
       console.error("Error sending message:", err);
     } finally {
@@ -68,26 +68,52 @@ export const ChatBox: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-blue-600 text-white p-4 shadow-md">
-        <h1 className="text-2xl font-bold">AI Chat Assistant</h1>
-        <p className="text-blue-100 text-sm">Powered by your .NET API</p>
+    <div className={`chat-panel ${className}`}>
+      <div className="chat-header">
+        <div className="chat-header-content">
+          <div className="chat-title-row">
+            <div className="chat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.6-.3-3.7-.8L3 21l1.8-5.3A8.5 8.5 0 1 1 21 11.5Z" />
+                <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" />
+              </svg>
+            </div>
+            <div className="chat-header-text">
+              <h2>Agent conversation</h2>
+              <p>Ask a question or upload context for a more relevant answer.</p>
+            </div>
+          </div>
+          <div className="status-pill">
+            <span className="status-dot" aria-hidden="true" />
+            Online
+          </div>
+        </div>
+        <div className="message-count" aria-label={`${messages.length} messages`}>
+          <strong>{messages.length}</strong>
+          <span>messages</span>
+        </div>
       </div>
 
-      {/* Error Banner */}
       {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3">
-          <p className="font-semibold">Error</p>
-          <p className="text-sm">{error}</p>
+        <div className="chat-error" role="alert">
+          <div className="chat-error-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8v5M12 16.5h.01" /></svg>
+          </div>
+          <div>
+            <strong>Conversation unavailable</strong>
+            <span>{error}</span>
+          </div>
+          <button className="error-dismiss" type="button" onClick={() => setError(null)} aria-label="Dismiss error">×</button>
         </div>
       )}
 
-      {/* Messages Area */}
-      <MessageList messages={messages} isLoading={isLoading} />
+      <div className="messages-area" aria-busy={isLoading}>
+        <MessageList messages={messages} isLoading={isLoading} />
+      </div>
 
-      {/* Input Area */}
-      <InputBox onSend={handleSendMessage} disabled={isLoading} />
+      <div className="composer-area">
+        <InputBox onSend={handleSendMessage} disabled={isLoading} />
+      </div>
     </div>
   );
 };

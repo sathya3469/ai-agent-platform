@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Net.Http.Json;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
@@ -10,18 +11,61 @@ public class ChromaDbService
     private readonly ILogger<ChromaDbService> _logger;
     private readonly string _chromaUrl;
     private const string DefaultCollection = "documents";
+    private static readonly ConcurrentDictionary<string, string> _collectionIdCache = new();
 
     public ChromaDbService(HttpClient httpClient, ILogger<ChromaDbService> logger, IConfiguration configuration)
     {
         _httpClient = httpClient;
         _logger = logger;
-        _chromaUrl = configuration.GetValue<string>("ChromaDB:Url") ?? "http://localhost:8000";
+        _chromaUrl = configuration.GetValue<string>("ChromaDB:Url")?.TrimEnd('/') ?? "http://localhost:8000";
+    }
+
+    private async Task<string?> GetCollectionIdAsync(string collectionName)
+    {
+        if (_collectionIdCache.TryGetValue(collectionName, out var cachedId))
+        {
+            return cachedId;
+        }
+
+        try
+        {
+            // Try v2 API first
+            var v2Url = $"{_chromaUrl}/api/v2/tenants/default_tenant/databases/default_database/collections/{collectionName}";
+            var response = await _httpClient.GetAsync(v2Url);
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                using var doc = JsonDocument.Parse(json);
+                if (doc.RootElement.TryGetProperty("id", out var idProp))
+                {
+                    var id = idProp.GetString();
+                    if (!string.IsNullOrEmpty(id))
+                    {
+                        _collectionIdCache[collectionName] = id;
+                        return id;
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogDebug(ex, "Error getting collection ID via v2");
+        }
+
+        return null;
     }
 
     public async Task<bool> CollectionExistsAsync(string collectionName = DefaultCollection)
     {
         try
         {
+            var id = await GetCollectionIdAsync(collectionName);
+            if (!string.IsNullOrEmpty(id))
+            {
+                return true;
+            }
+
+            // Fallback check v1
             var response = await _httpClient.GetAsync($"{_chromaUrl}/api/v1/collections/{collectionName}");
             return response.IsSuccessStatusCode;
         }
@@ -36,13 +80,39 @@ public class ChromaDbService
     {
         try
         {
-            var payload = new
+            // Try v2 creation first
+            var v2Url = $"{_chromaUrl}/api/v2/tenants/default_tenant/databases/default_database/collections";
+            var v2Payload = new
+            {
+                name = collectionName,
+                get_or_create = true
+            };
+
+            var v2Response = await _httpClient.PostAsJsonAsync(v2Url, v2Payload);
+            if (v2Response.IsSuccessStatusCode)
+            {
+                var json = await v2Response.Content.ReadAsStringAsync();
+                using var doc = JsonDocument.Parse(json);
+                if (doc.RootElement.TryGetProperty("id", out var idProp))
+                {
+                    var id = idProp.GetString();
+                    if (!string.IsNullOrEmpty(id))
+                    {
+                        _collectionIdCache[collectionName] = id;
+                        _logger.LogInformation("Collection {CollectionName} (ID: {Id}) created/retrieved via v2", collectionName, id);
+                        return;
+                    }
+                }
+            }
+
+            // Fallback to v1
+            var v1Payload = new
             {
                 name = collectionName,
                 metadata = new { hnsw_space = "cosine" }
             };
 
-            var response = await _httpClient.PostAsJsonAsync($"{_chromaUrl}/api/v1/collections", payload);
+            var response = await _httpClient.PostAsJsonAsync($"{_chromaUrl}/api/v1/collections", v1Payload);
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsStringAsync();
@@ -50,7 +120,7 @@ public class ChromaDbService
             }
             else
             {
-                _logger.LogInformation("Collection {CollectionName} created successfully", collectionName);
+                _logger.LogInformation("Collection {CollectionName} created successfully via v1", collectionName);
             }
         }
         catch (Exception ex)
@@ -65,11 +135,13 @@ public class ChromaDbService
     {
         try
         {
-            // Ensure collection exists
+            // Ensure collection exists and get its ID if on v2
             if (!await CollectionExistsAsync(collectionName))
             {
                 await CreateCollectionAsync(collectionName);
             }
+
+            var collectionId = await GetCollectionIdAsync(collectionName);
 
             var payload = new
             {
@@ -79,16 +151,23 @@ public class ChromaDbService
                 embeddings = embeddings
             };
 
-            var response = await _httpClient.PostAsJsonAsync(
-                $"{_chromaUrl}/api/v1/collections/{collectionName}/add",
-                payload
-            );
+            HttpResponseMessage response;
+            if (!string.IsNullOrEmpty(collectionId))
+            {
+                var v2Url = $"{_chromaUrl}/api/v2/tenants/default_tenant/databases/default_database/collections/{collectionId}/add";
+                response = await _httpClient.PostAsJsonAsync(v2Url, payload);
+            }
+            else
+            {
+                var v1Url = $"{_chromaUrl}/api/v1/collections/{collectionName}/add";
+                response = await _httpClient.PostAsJsonAsync(v1Url, payload);
+            }
 
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsStringAsync();
                 _logger.LogError("Failed to add documents: {StatusCode} - {Error}", response.StatusCode, error);
-                throw new Exception($"Failed to add documents to ChromaDB: {response.StatusCode}");
+                throw new Exception($"Failed to add documents to ChromaDB: {response.StatusCode} - {error}");
             }
 
             _logger.LogInformation("Added {Count} documents to collection {CollectionName}", ids.Count, collectionName);
@@ -105,6 +184,8 @@ public class ChromaDbService
     {
         try
         {
+            var collectionId = await GetCollectionIdAsync(collectionName);
+
             var payload = new
             {
                 query_embeddings = queryEmbeddings,
@@ -112,23 +193,38 @@ public class ChromaDbService
                 where = whereFilter
             };
 
-            var response = await _httpClient.PostAsJsonAsync(
-                $"{_chromaUrl}/api/v1/collections/{collectionName}/query",
-                payload
-            );
+            HttpResponseMessage response;
+            if (!string.IsNullOrEmpty(collectionId))
+            {
+                var v2Url = $"{_chromaUrl}/api/v2/tenants/default_tenant/databases/default_database/collections/{collectionId}/query";
+                response = await _httpClient.PostAsJsonAsync(v2Url, payload);
+            }
+            else
+            {
+                var v1Url = $"{_chromaUrl}/api/v1/collections/{collectionName}/query";
+                response = await _httpClient.PostAsJsonAsync(v1Url, payload);
+            }
 
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsStringAsync();
                 _logger.LogError("Query failed: {StatusCode} - {Error}", response.StatusCode, error);
-                throw new Exception($"Failed to query ChromaDB: {response.StatusCode}");
+                throw new Exception($"Failed to query ChromaDB: {response.StatusCode} - {error}");
             }
 
             var responseBody = await response.Content.ReadAsStringAsync();
-            var results = JsonSerializer.Deserialize<List<QueryResult>>(responseBody,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new List<QueryResult>();
+            var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-            return results;
+            // ChromaDB v2 returns a single object containing lists, v1 might return an array or object
+            if (responseBody.TrimStart().StartsWith("["))
+            {
+                return JsonSerializer.Deserialize<List<QueryResult>>(responseBody, jsonOptions) ?? new List<QueryResult>();
+            }
+            else
+            {
+                var singleResult = JsonSerializer.Deserialize<QueryResult>(responseBody, jsonOptions);
+                return singleResult != null ? new List<QueryResult> { singleResult } : new List<QueryResult>();
+            }
         }
         catch (Exception ex)
         {

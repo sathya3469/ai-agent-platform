@@ -25,48 +25,35 @@ export const InputBox: React.FC<InputBoxProps> = ({ onSend, disabled }) => {
   const isButtonDisabled = disabled || !input.trim();
 
   return (
-    <div className="space-y-3">
-      {/* Character count and hints */}
-      <div className="flex justify-between items-center px-1">
-        <div className="flex gap-4 text-xs text-slate-500">
+    <div className="input-box">
+      <div className="input-meta">
+        <div className="flex">
           <span className="flex items-center gap-1">
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+              <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 001.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
             </svg>
             Shift+Enter for new line
           </span>
         </div>
-        <span className={`text-xs font-medium ${input.length > 1000 ? 'text-red-500' : 'text-slate-400'}`}>
+        <span className={`${input.length > 1000 ? 'text-red-500' : 'text-slate-400'} font-medium`}>
           {input.length} / 2000
         </span>
       </div>
 
-      {/* Input area */}
-      <div className="relative">
+      <div className="input-area">
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value.slice(0, 2000))}
           onKeyPress={handleKeyPress}
           placeholder="Ask me anything... I'll search your uploaded documents and provide context-aware responses."
           disabled={disabled}
-          className="w-full px-4 py-3 pr-14 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none max-h-28 text-sm text-slate-800 placeholder-slate-400 bg-white transition-all disabled:bg-slate-50 disabled:text-slate-500"
           rows={1}
-          style={{
-            minHeight: '44px',
-            maxHeight: '120px',
-            height: Math.min(Math.max(44, (input.split('\n').length * 20 + 24)), 120) + 'px'
-          }}
         />
 
-        {/* Send button */}
         <button
+          className={`send-button ${isButtonDisabled ? '' : ''}`}
           onClick={handleSend}
           disabled={isButtonDisabled}
-          className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-all ${
-            isButtonDisabled
-              ? 'text-slate-300 cursor-not-allowed'
-              : 'text-blue-600 hover:bg-blue-50 active:bg-blue-100 cursor-pointer'
-          }`}
           title={isButtonDisabled ? 'Type a message to send' : 'Send message (Enter)'}
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -75,11 +62,10 @@ export const InputBox: React.FC<InputBoxProps> = ({ onSend, disabled }) => {
         </button>
       </div>
 
-      {/* Tips */}
       {!input.trim() && (
-        <div className="flex gap-2 text-xs text-slate-500 px-1">
+        <div className="tips">
           <svg className="w-4 h-4 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0zM8 9a1 1 0 100-2 1 1 0 000 2zm1 4a1 1 0 11-2 0 1 1 0 012 0z" clipRule="evenodd" />
+            <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 012-2V5a2 2 0 012 2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0zM8 9a1 1 0 100-2 1 1 0 000 2zm1 4a1 1 0 11-2 0 1 1 0 012 0z" clipRule="evenodd" />
           </svg>
           <span>💡 <span className="font-medium">Tip:</span> Upload documents to get more relevant and context-aware responses!</span>
         </div>

@@ -57,41 +57,29 @@ public class ChatService
         _conversationHistory.Add(new Message { Role = "user", Content = message });
 
         var fullResponse = "";
-        var tokens = new List<string>();
-        try
-        {
-            // Augment message with RAG context if enabled
-            var augmentedMessage = message;
-            if (_useRag)
-            {
-                try
-                {
-                    augmentedMessage = await _ragService.GetAugmentedPromptAsync(message, topK: 5);
-                    _logger.LogInformation("Message augmented with RAG context");
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogWarning(ex, "RAG augmentation failed, using original message");
-                }
-            }
 
-            await foreach (var token in _llmProvider.StreamResponseAsync(augmentedMessage))
-            {
-                tokens.Add(token);
-                fullResponse += token;
-            }
-            _conversationHistory.Add(new Message { Role = "assistant", Content = fullResponse });
-        }
-        catch (Exception ex)
+        // Augment message with RAG context if enabled
+        var augmentedMessage = message;
+        if (_useRag)
         {
-            _logger.LogError(ex, "Error in StreamChatAsync");
-            throw;
+            try
+            {
+                augmentedMessage = await _ragService.GetAugmentedPromptAsync(message, topK: 5);
+                _logger.LogInformation("Message augmented with RAG context");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "RAG augmentation failed, using original message");
+            }
         }
 
-        foreach (var t in tokens)
+        // Note: no try/catch around yield return — yield inside a try that has a catch is illegal.
+        await foreach (var token in _llmProvider.StreamResponseAsync(augmentedMessage))
         {
-            yield return t;
+            fullResponse += token;
+            yield return token;
         }
+        _conversationHistory.Add(new Message { Role = "assistant", Content = fullResponse });
     }
 
     public IEnumerable<Message> GetConversationHistory()

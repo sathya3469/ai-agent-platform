@@ -16,7 +16,7 @@ export async function* streamMessage(
     const response = await fetch(`${API_BASE_URL}/api/chat/stream`, {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        Accept: "text/plain",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ message, sessionId: "string" }),
@@ -32,44 +32,14 @@ export async function* streamMessage(
 
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
-    let buffer = "";
 
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
 
-      buffer += decoder.decode(value, { stream: true });
-
-      // Parse JSON tokens from the buffer
-      const lines = buffer.split("\n");
-      buffer = lines[lines.length - 1]; // Keep incomplete line in buffer
-
-      for (let i = 0; i < lines.length - 1; i++) {
-        const line = lines[i].trim();
-        if (line) {
-          try {
-            const token = JSON.parse(line);
-            yield token;
-          } catch {
-            // Ignore parse errors, continue
-          }
-        }
-      }
-    }
-
-    // Process remaining buffer
-    if (buffer.trim()) {
-      try {
-        const parsed: unknown = JSON.parse(buffer);
-        if (Array.isArray(parsed)) {
-          for (const token of parsed) {
-            if (typeof token === "string") yield token;
-          }
-        } else if (typeof parsed === "string") {
-          yield parsed;
-        }
-      } catch {
-        // Ignore parse errors
+      const text = decoder.decode(value, { stream: true });
+      if (text) {
+        yield text;
       }
     }
   } catch (error) {

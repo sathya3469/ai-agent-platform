@@ -27,10 +27,12 @@ builder.Services.AddScoped<ChatService>();
 builder.Services.AddScoped<IEmbeddingService, EmbeddingService>();
 builder.Services.AddScoped<ChromaDbService>();
 builder.Services.AddScoped<RagService>();
+builder.Services.AddScoped<AgentOrchestratorService>(); // Fix missing service
 builder.Services.Configure<LlmConfig>(builder.Configuration.GetSection("LLM"));
 builder.Services.AddAgentFramework();
 // Add CORS
-var llmProvider = builder.Configuration.GetSection("LLM").Get<LlmConfig>()?.Provider ?? "ollama";
+var llmConfig = builder.Configuration.GetSection("LLM").Get<LlmConfig>();
+var llmProvider = llmConfig?.Provider ?? "ollama";
 Log.Information("Configuring LLM Provider: {Provider}", llmProvider);
 
 if (llmProvider.Equals("openai", StringComparison.OrdinalIgnoreCase))
@@ -52,17 +54,8 @@ builder.Services.AddCors(options =>
                 "http://localhost:3000",
                 "http://127.0.0.1:3000",
                 "http://localhost:5173",
-                "http://127.0.0.1:5173")
-            .SetIsOriginAllowed(origin =>
-            {
-                if (!Uri.TryCreate(origin, UriKind.Absolute, out var uri))
-                {
-                    return false;
-                }
-
-                return uri.Scheme == Uri.UriSchemeHttp &&
-                    (uri.Host == "localhost" || uri.Host == "127.0.0.1");
-            })
+                "http://127.0.0.1:5173",
+                "https://localhost:7005") // Allow Swagger/Frontend origin
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
@@ -95,7 +88,11 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
-app.UseHttpsRedirection();
+// Skip HTTPS redirect in development to avoid CORS issues with mixed protocols
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 app.UseCors();
 app.UseAuthorization();
 

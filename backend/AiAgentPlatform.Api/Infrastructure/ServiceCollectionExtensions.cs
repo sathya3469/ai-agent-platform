@@ -3,6 +3,7 @@ using Microsoft.Extensions.AI;
 using Microsoft.SemanticKernel;
 using AiAgentPlatform.Api.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection; // added for ServiceLifetime and extension methods
 
 namespace AiAgentPlatform.Api.Extensions
 {
@@ -30,7 +31,22 @@ namespace AiAgentPlatform.Api.Extensions
                     logger.LogWarning(ex, "Failed to initialize OllamaChatClient. Make sure Ollama is running at {Endpoint}", config.Endpoint);
                     throw;
                 }
-            });             
+            });
+
+            // Register Semantic Kernel that uses the IChatClient
+            services.AddSingleton<Kernel>(sp =>
+            {
+                var chatClient = sp.GetRequiredService<IChatClient>();
+
+                // Use the public builder/factory exposed by the Semantic Kernel API
+                // (replace Kernel.Builder with the correct public entry point if it differs)
+                var kernelBuilder = Kernel.CreateBuilder();
+
+                // AddChatClient extension is defined for IServiceCollection; use the builder's Services property
+                kernelBuilder.Services.AddChatClient(chatClient, ServiceLifetime.Singleton);
+
+                return kernelBuilder.Build();
+            });
 
             services.AddHttpClient();
             services.AddSingleton<ChromaClient>(sp =>
