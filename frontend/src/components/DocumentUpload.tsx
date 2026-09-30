@@ -5,6 +5,19 @@ interface DocumentUploadProps {
   onUploadError?: (error: string) => void;
 }
 
+interface UploadResponse {
+  message?: string;
+  error?: string;
+  documentId?: string;
+  fileName?: string;
+  chunksCreated?: number;
+  progress?: number;
+}
+
+const ACCEPTED_EXTENSIONS = [
+  ".txt", ".md", ".csv", ".html", ".xml", ".json", ".log", ".pdf", ".doc", ".docx",
+] as const;
+
 export const DocumentUpload: React.FC<DocumentUploadProps> = ({
   onUploadSuccess,
   onUploadError,
@@ -14,42 +27,134 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
   const [uploadMessage, setUploadMessage] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [processingStage, setProcessingStage] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const uploadIdRef = useRef(0);
+  // Stops the progressive "still working" timers when the upload settles.
+  const stopStageTimers = useRef<(() => void) | null>(null);
 
-  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5243";
+  const API_BASE_URL = import.meta.env.VITE_API_URL ?? "";
 
-  const handleFile = async (file: File) => {
-    setSelectedFile(file);
+  const PROCESSING_STAGES: { at: number; message: (fileName: string) => string }[] = [
+    { at: 0, message: (name) => `Uploading ${name}...` },
+    { at: 5000, message: (name) => `Reading and chunking ${name}...` },
+    { at: 20000, message: (name) => `Embedding ${name} (this can take a while)...` },
+    { at: 60000, message: () => "Still indexing — generating embeddings for each chunk..." },
+  ];
+
+  const UPLOAD_TIMEOUT_MS = 10 * 60 * 1000;
+
+  const resetFeedback = () => {
     setUploadError(null);
     setUploadMessage(null);
+  };
+
+  const handleFile = async (file: File) => {
+    const extension = (file.name.split(".").pop() ?? "").toLowerCase();
+    const extensionWithDot = extension ? `.${extension}` : "";
+
+    if (!ACCEPTED_EXTENSIONS.includes(extensionWithDot as (typeof ACCEPTED_EXTENSIONS)[number])) {
+      const message = `Unsupported file type "${extensionWithDot}". Only TXT, MD, CSV, HTML, XML, JSON, LOG, PDF, DOC or DOCX are supported.`;
+      setUploadError(message);
+      onUploadError?.(message);
+      return;
+    }
+
+    // Cancel any in-flight upload so its stale callbacks can't clobber the new one.
+    uploadIdRef.current += 1;
+    const uploadId = uploadIdRef.current;
+
+    resetFeedback();
+    setSelectedFile(file);
     setIsUploading(true);
+    setProcessingStage(`Uploading ${file.name}...`);
+
+    // Progressive "still working" messaging: a large PDF can take minutes to
+    // embed on a cold Ollama instance, and a stuck spinner looks like a dead
+    // upload. Cleared on completion and on any timeout/error path below.
+    const stageTimers = PROCESSING_STAGES.map(({ at, message }) =>
+      window.setTimeout(() => {
+        if (uploadId === uploadIdRef.current && !stopStageTimers.current) {
+          setProcessingStage(message(file.name));
+        }
+      }, at)
+    );
+    stopStageTimers.current = () => stageTimers.forEach((id) => window.clearTimeout(id));
+
+    // Absolute deadline. Ollama embedding of a large document is slow, so this
+    // is generous — but without it a stalled backend hangs the UI indefinitely.
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), UPLOAD_TIMEOUT_MS);
 
     try {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch(`${apiUrl}/api/Document/upload`, {
+      const response = await fetch(`${API_BASE_URL}/api/Document/upload`, {
         method: "POST",
         body: formData,
+        signal: controller.signal,
       });
 
-      const data = (await response.json()) as { message?: string; chunksCreated?: number };
+      let data: UploadResponse = {};
+      try {
+        data = (await response.json()) as UploadResponse;
+      } catch {
+        throw new Error(
+          `The server returned an unexpected response (HTTP ${response.status}). Is the backend running${
+            API_BASE_URL ? ` on ${API_BASE_URL}` : " and reachable"
+          }?`
+        );
+      }
+
+      if (uploadId !== uploadIdRef.current) return;
 
       if (!response.ok) {
-        throw new Error(data.message || "Upload failed");
+        const errorMsg = data.message ?? data.error ?? `Upload failed (HTTP ${response.status})`;
+
+        // Surface an actionable hint when the dependency chain is down.
+        if (response.status === 503 || /chroma|embedding|8000|unavailable/i.test(errorMsg)) {
+          throw new Error(
+            "Document service unavailable. Please ensure ChromaDB is running on localhost:8000 and the backend can reach it."
+          );
+        }
+
+        throw new Error(errorMsg);
       }
 
       const chunksCreated = typeof data.chunksCreated === "number" ? data.chunksCreated : 0;
-      const successMessage = `${data.message || "Document uploaded"} (${chunksCreated} chunks)`;
+      const successMessage = `${data.message ?? "Document uploaded successfully"} — ${chunksCreated} chunk${chunksCreated === 1 ? "" : "s"} indexed`;
+
       setUploadMessage(successMessage);
-      setSelectedFile(null);
+      setProcessingStage("");
+      setSelectedFile(file);
       onUploadSuccess?.(successMessage);
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Upload failed";
+      if (uploadId !== uploadIdRef.current) return;
+
+      // Give an actionable reason for a timeout rather than a bare "Upload
+      // failed": the embedding step is by far the slowest part of the pipeline.
+      const isTimeout =
+        error instanceof DOMException && (error.name === "AbortError" || error.name === "TimeoutError");
+
+      const errorMessage = isTimeout
+        ? `Upload timed out after ${Math.round(UPLOAD_TIMEOUT_MS / 1000 / 60)} minutes. ` +
+          "The backend may still be embedding the document (Ollama is slow on a cold model) — wait a moment, then try again or use a smaller file."
+        : error instanceof Error
+          ? error.message
+          : "Upload failed";
+
       setUploadError(errorMessage);
+      setProcessingStage("");
       onUploadError?.(errorMessage);
     } finally {
-      setIsUploading(false);
+      window.clearTimeout(timeout);
+      stopStageTimers.current?.();
+      stopStageTimers.current = null;
+
+      if (uploadId === uploadIdRef.current) {
+        setIsUploading(false);
+      }
     }
   };
 
@@ -94,7 +199,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
         </div>
         <div className="drop-zone-content">
           <strong className="drop-zone-title">{selectedFile ? selectedFile.name : "Drop a document here"}</strong>
-          <span className="drop-zone-subtitle">{selectedFile ? `${(selectedFile.size / 1024 / 1024).toFixed(2)} MB · ready to index` : "PDF, TXT, HTML, DOC, or DOCX"}</span>
+          <span className="drop-zone-subtitle">{selectedFile ? `${(selectedFile.size / 1024 / 1024).toFixed(2)} MB · indexing…` : "TXT, MD, CSV, HTML, XML, or JSON"}</span>
         </div>
         <button className="upload-button" type="button" onClick={() => fileInputRef.current?.click()} disabled={isUploading}>
           {isUploading ? "Uploading" : "Choose file"}
@@ -103,7 +208,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           ref={fileInputRef}
           className="file-input"
           type="file"
-          accept=".pdf,.txt,.html,.doc,.docx,application/pdf,text/plain,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          accept=".txt,.md,.csv,.html,.xml,.json,.log,.pdf,.doc,.docx"
           onChange={handleFileChange}
           disabled={isUploading}
           aria-label="Choose a document to upload"
@@ -114,6 +219,13 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
         <button className="remove-file" type="button" onClick={() => setSelectedFile(null)}>
           Remove selected file
         </button>
+      )}
+
+      {isUploading && processingStage && (
+        <div className="upload-processing" role="status">
+          <span className="upload-spinner" aria-hidden="true" />
+          <span>{processingStage}</span>
+        </div>
       )}
 
       {uploadMessage && (

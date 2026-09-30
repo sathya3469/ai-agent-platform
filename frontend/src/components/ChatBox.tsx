@@ -1,18 +1,25 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { Message } from "../types/chat";
-import { streamMessage, getHistory } from "../services/chatService";
+import {
+  streamMessage,
+  getHistory,
+  runAgent,
+  type AgentThought,
+} from "../services/chatService";
 import { MessageList } from "./MessageList";
 import { InputBox } from "./InputBoxFixed";
 
 interface ChatBoxProps {
-  className?: string;
+  agentMode?: boolean;
 }
 
-export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
+export function ChatBox({ agentMode = false }: ChatBoxProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
+  const [agentThoughts, setAgentThoughts] = useState<AgentThought[]>([]);
   useEffect(() => {
     const loadHistory = async () => {
       try {
@@ -38,7 +45,23 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
+       if (agentMode) {
+      // Use agent endpoint (same API_BASE_URL + headers pattern as streamMessage)
+      const data = await runAgent(messageText);
+      setAgentThoughts(data.thoughts);
+      // Display agent final answer as an assistant message
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: data.finalAnswer,
+          timestamp: new Date(),
+        },
+      ]);
+    }
+    else{
       let assistantContent = "";
+      let receivedAnyToken = false;
       const assistantMessage: Message = {
         role: "assistant",
         content: "",
@@ -46,6 +69,7 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
       };
 
       for await (const token of streamMessage(messageText)) {
+        receivedAnyToken = true;
         assistantContent += token;
         assistantMessage.content = assistantContent;
         setMessages((prev) => {
@@ -57,7 +81,13 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
           }
           return updated;
         });
+         
       }
+
+      if (!receivedAnyToken && assistantContent.trim() === "") {
+        throw new Error("The assistant did not return a response. Check that Ollama is running and the model is loaded.");
+      }
+    }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "An error occurred";
       setError(errorMessage);
@@ -68,7 +98,7 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
   };
 
   return (
-    <div className={`chat-panel ${className}`}>
+    <div className="chat-panel">
       <div className="chat-header">
         <div className="chat-header-content">
           <div className="chat-title-row">
@@ -107,6 +137,31 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
         </div>
       )}
 
+      {agentMode && agentThoughts.length > 0 && (
+        <section className="agent-thinking" aria-label="Agent reasoning">
+          <h3 className="agent-thinking-title">Agent thinking</h3>
+          {agentThoughts.map((thought, index) => {
+            const label =
+              thought.type === "THINK"
+                ? "Thinking"
+                : thought.type === "ACT"
+                  ? "Action"
+                  : thought.type === "OBSERVE"
+                    ? "Tool result"
+                    : "Final answer";
+
+            return (
+              <div key={`${thought.step}-${index}`} className={`agent-thought agent-thought-${thought.type.toLowerCase()}`}>
+                <strong className="agent-thought-label">{label}</strong>
+                <div className="agent-thought-content markdown">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{thought.content}</ReactMarkdown>
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      )}
+
       <div className="messages-area" aria-busy={isLoading}>
         <MessageList messages={messages} isLoading={isLoading} />
       </div>
@@ -114,6 +169,12 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ className = "" }) => {
       <div className="composer-area">
         <InputBox onSend={handleSendMessage} disabled={isLoading} />
       </div>
+
+      <p className="chat-mode">
+        {agentMode
+          ? "Agent Mode: Shows reasoning steps"
+          : "Chat Mode: Direct responses"}
+      </p>
     </div>
   );
-};
+}

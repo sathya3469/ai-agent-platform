@@ -34,11 +34,51 @@ public class ChatController : ControllerBase
         Response.Headers["Cache-Control"] = "no-cache";
         Response.Headers["X-Content-Type-Options"] = "nosniff";
 
-        await foreach (var token in _chatService.StreamChatAsync(request.Message))
+        // Once the first token is flushed the status code is already committed (200), so a
+        // later failure cannot be reported via HTTP status. Append a readable marker to the
+        // body instead — the frontend already treats a short/empty answer as a failure.
+        var hasWrittenTokens = false;
+        try
         {
-            await Response.WriteAsync(token);
-            await Response.Body.FlushAsync();
+            await foreach (var token in _chatService.StreamChatAsync(request.Message, request.SessionId))
+            {
+                await Response.WriteAsync(token);
+                await Response.Body.FlushAsync();
+                hasWrittenTokens = true;
+            }
         }
+        catch (OperationCanceledException)
+        {
+            await WriteStreamErrorAsync(hasWrittenTokens, "The request was canceled while waiting for the model. The model may still be loading — please retry.");
+        }
+        catch (TimeoutException ex)
+        {
+            await WriteStreamErrorAsync(hasWrittenTokens, ex.Message);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Streaming chat failed");
+            if (!hasWrittenTokens)
+            {
+                Response.StatusCode = StatusCodes.Status503ServiceUnavailable;
+            }
+            await WriteStreamErrorAsync(
+                hasWrittenTokens,
+                hasWrittenTokens
+                    ? $"[stream interrupted: {ex.Message}]"
+                    : $"The assistant could not be reached. {ex.Message}");
+        }
+    }
+
+    private async Task WriteStreamErrorAsync(bool hasWrittenTokens, string message)
+    {
+        if (hasWrittenTokens)
+        {
+            return;
+        }
+
+        await Response.WriteAsync(message);
+        await Response.Body.FlushAsync();
     }
 
     /// <summary>
@@ -47,7 +87,7 @@ public class ChatController : ControllerBase
     [HttpPost("full")]
     public async Task<ChatResponse> ChatFull([FromBody] ChatRequest request)
     {
-        var message = await _chatService.ChatAsync(request.Message);
+        var message = await _chatService.ChatAsync(request.Message, request.SessionId);
         return new ChatResponse
         {
             Content = message,
@@ -55,27 +95,21 @@ public class ChatController : ControllerBase
         };
     }
     /// <summary>
-    /// Get conversation history.
+    /// Get conversation history from PostgreSQL.
     /// </summary>
     [HttpGet("history")]
-    public ActionResult<IEnumerable<Message>> GetHistory()
+    public async Task<ActionResult<IEnumerable<Message>>> GetHistory([FromQuery] string? sessionId = null)
     {
-        return Ok(_chatService.GetConversationHistory());
+        return Ok(await _chatService.GetConversationHistoryAsync(sessionId));
     }
 
     /// <summary>
     /// Clear conversation history.
     /// </summary>
     [HttpDelete("history")]
-    public ActionResult ClearHistory()
+    public async Task<ActionResult> ClearHistory()
     {
-        _chatService.ClearHistory();
+        await _chatService.ClearHistoryAsync();
         return Ok(new { message = "History cleared" });
     }
-}
-
-public record ChatRequest : IEquatable<ChatRequest>
-{
-  public string Message { get; init; }
-  public string? SessionId { get; init; }
 }

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* InputBox.css overrides */
 .input-box {
   max-width: 820px;

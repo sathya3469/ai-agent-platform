@@ -12,6 +12,7 @@ public class OllamaLlmProvider : ILlmProvider
     private readonly ILogger<OllamaLlmProvider> _logger;
     private readonly string _endpoint;
     private readonly string _model;
+    private readonly TimeSpan _streamReadTimeout;
 
     public OllamaLlmProvider(HttpClient httpClient, IConfiguration configuration, ILogger<OllamaLlmProvider> logger)
     {
@@ -20,9 +21,13 @@ public class OllamaLlmProvider : ILlmProvider
         var config = configuration.GetSection("LLM").Get<LlmConfig>() ?? new LlmConfig();
         _endpoint = config.Endpoint;
         _model = config.Model;
-        
-        // Set timeout to avoid rate limiting issues
-        _httpClient.Timeout = TimeSpan.FromSeconds(300); // 5 minutes instead of 2
+
+        // For streaming with large context (RAG + PDFs), we need a much longer timeout.
+        // The timeout from config is in milliseconds; default to 5 minutes for PDF/RAG workloads.
+        var timeoutMs = config.Timeout > 0 ? config.Timeout : 300000; // 5 minutes default
+        _httpClient.Timeout = Timeout.InfiniteTimeSpan;
+        _streamReadTimeout = TimeSpan.FromMilliseconds(timeoutMs);
+        _logger.LogInformation("OllamaLlmProvider configured with timeout: {TimeoutSeconds}s", timeoutMs / 1000);
     }
 
     public async Task<string> GenerateResponseAsync(string message)
@@ -63,8 +68,15 @@ public class OllamaLlmProvider : ILlmProvider
         _logger.LogInformation("POST request to: {Url}", url);
 
         var stopwatch = System.Diagnostics.Stopwatch.StartNew();
-        using var response = await _httpClient.PostAsync(url, content);
-        _logger.LogInformation("Ollama response received in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
+        // Use SendAsync with ResponseHeadersRead so the call returns as soon as
+        // headers arrive. PostAsync's default (ResponseContentRead) waits for the
+        // full body, which blocks streaming and causes HttpClient.Timeout to fire
+        // mid-generation.
+        using var requestMessage = new HttpRequestMessage(HttpMethod.Post, url) { Content = content };
+        // Give the model time to load on a cold start, but still fail rather than hang forever.
+        using var requestCts = new CancellationTokenSource(_streamReadTimeout);
+        using var response = await _httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, requestCts.Token);
+        _logger.LogInformation("Ollama response headers received in {ElapsedMs}ms", stopwatch.ElapsedMilliseconds);
 
         if (!response.IsSuccessStatusCode)
         {
@@ -76,10 +88,40 @@ public class OllamaLlmProvider : ILlmProvider
         using var stream = await response.Content.ReadAsStreamAsync();
         using var reader = new StreamReader(stream);
 
+        // Bound each individual read. A stalled Ollama process would otherwise hold the
+        // request open indefinitely now that the absolute HttpClient.Timeout is disabled.
+        using var readCts = new CancellationTokenSource(_streamReadTimeout);
+
         string? line;
         var tokenCount = 0;
-        while ((line = await reader.ReadLineAsync()) != null)
+        var startTime = DateTime.UtcNow;
+        while (true)
         {
+            try
+            {
+                line = await reader.ReadLineAsync(readCts.Token);
+            }
+            catch (OperationCanceledException)
+            {
+                // The read stall is a hard failure: we cannot trust that Ollama is still
+                // making progress. Surface a targeted error rather than a generic 500.
+                _logger.LogError("Ollama stream stalled: no data received within {TimeoutSeconds}s", _streamReadTimeout.TotalSeconds);
+                throw new TimeoutException(
+                    $"Ollama stopped responding mid-generation after {_streamReadTimeout.TotalSeconds:F0}s. " +
+                    "The model may still be loading; retry shortly.");
+            }
+
+            if (line is null)
+            {
+                break;
+            }
+
+            _logger.LogDebug("Received line from Ollama: {Line}", line);
+            tokenCount++;
+            if (tokenCount % 10 == 0)
+            {
+                _logger.LogInformation("Streaming tokens: {TokenCount} processed in {ElapsedMs}ms", tokenCount, (DateTime.UtcNow - startTime).TotalMilliseconds);
+            }
             if (string.IsNullOrWhiteSpace(line))
                 continue;
 
@@ -102,10 +144,6 @@ public class OllamaLlmProvider : ILlmProvider
                 yield return token;
             }
 
-            tokenCount++;
-            if (tokenCount % 10 == 0) // Log every 10 tokens
-                _logger.LogInformation("Processed {TokenCount} tokens in {ElapsedMs}ms", 
-                    tokenCount, stopwatch.ElapsedMilliseconds);
         }
     }
 }

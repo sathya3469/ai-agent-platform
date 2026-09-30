@@ -5,6 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "types": ["node", "react"]
+    "types": ["node", "react","vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }

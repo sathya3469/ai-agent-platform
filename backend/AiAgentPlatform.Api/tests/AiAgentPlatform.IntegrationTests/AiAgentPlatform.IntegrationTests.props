@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      The integration tests compile into the API assembly rather than a separate project,
+      so the SDK never emits the WebApplicationFactoryContentRoot attribute that
+      WebApplicationFactory<Program> relies on. Provide it explicitly; the content root is
+      the output directory, where appsettings.json is copied at build time.
+    -->
+    <AssemblyAttribute Include="Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute">
+      <_Parameter1>$(AssemblyName)</_Parameter1>
+      <_Parameter2>$(OutDir)</_Parameter2>
+      <_Parameter3>$(AssemblyName).dll</_Parameter3>
+      <_Parameter4>true</_Parameter4>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>

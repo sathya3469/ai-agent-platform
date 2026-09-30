@@ -1,6 +1,8 @@
 using AiAgentPlatform.Api.Models;
 using AiAgentPlatform.Api.Services;
 using Microsoft.AspNetCore.Mvc;
+using UglyToad.PdfPig;
+using UglyToad.PdfPig.DocumentLayoutAnalysis.TextExtractor;
 
 namespace AiAgentPlatform.Api.Controllers;
 
@@ -31,11 +33,39 @@ public class DocumentController : ControllerBase
                 return BadRequest(new { message = "No file provided" });
             }
 
+            var allowedExtensions = new HashSet<string> { ".txt", ".md", ".csv", ".html", ".xml", ".json", ".log", ".pdf", ".doc", ".docx" };
+            var extension = Path.GetExtension(file.FileName)?.ToLowerInvariant() ?? "";
+
+            if (!allowedExtensions.Contains(extension))
+            {
+                return BadRequest(new { message = $"Unsupported file type '{extension}'. Only text-based files are supported (TXT, MD, CSV, HTML, XML, JSON, LOG, PDF, DOC, DOCX)." });
+            }
+
             _logger.LogInformation("Uploading document: {FileName}", file.FileName);
 
-            // Read file content
-            using var stream = new StreamReader(file.OpenReadStream());
-            var content = await stream.ReadToEndAsync();
+            string content;
+
+            if (extension == ".pdf")
+            {
+                // Optimize PDF extraction by using a more efficient approach
+                using var pdfStream = file.OpenReadStream();
+                using var pdf = PdfDocument.Open(pdfStream);
+                
+                // Extract text with minimal overhead
+                var textBuilder = new System.Text.StringBuilder();
+                foreach (var page in pdf.GetPages())
+                {
+                    var pageText = ContentOrderTextExtractor.GetText(page);
+                    textBuilder.Append(pageText).Append("\n\n");
+                }
+                content = textBuilder.ToString().Trim();
+            }
+            else
+            {
+                // For non-PDF files, use a more efficient stream reader
+                using var stream = new StreamReader(file.OpenReadStream(), encoding: System.Text.Encoding.UTF8, detectEncodingFromByteOrderMarks: false, bufferSize: 65536);
+                content = await stream.ReadToEndAsync();
+            }
 
             if (string.IsNullOrWhiteSpace(content))
             {
@@ -49,7 +79,7 @@ public class DocumentController : ControllerBase
                 FileName = file.FileName,
                 Content = content,
                 FileSizeBytes = file.Length,
-                FileType = Path.GetExtension(file.FileName)
+                FileType = extension
             };
 
             // Process and index document
@@ -57,10 +87,34 @@ public class DocumentController : ControllerBase
 
             return Ok(response);
         }
+        catch (HttpRequestException httpEx)
+        {
+            _logger.LogError(httpEx, "ChromaDB or embedding service is unavailable");
+            return StatusCode(503, new { message = "Document service is unavailable. Please ensure ChromaDB is running on port 8000." });
+        }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error uploading document");
-            return StatusCode(500, new { message = "Error uploading document", error = ex.Message });
+            return StatusCode(500, new { message = $"Error uploading document: {ex.Message}" });
+        }
+    }
+
+    /// <summary>
+    /// Return the number of indexed files and the list of file names currently stored in ChromaDB.
+    /// </summary>
+    [HttpGet("files")]
+    [ApiExplorerSettings(IgnoreApi = true)]
+    public async Task<ActionResult<DocumentFileInventoryResponse>> GetIndexedFiles()
+    {
+        try
+        {
+            var response = await _ragService.GetIndexedFilesAsync();
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error listing files from ChromaDB");
+            return StatusCode(500, new { message = "Error listing indexed files", error = ex.Message });
         }
     }
 
@@ -117,6 +171,20 @@ public class DocumentController : ControllerBase
         {
             _logger.LogError(ex, "Error augmenting prompt");
             return StatusCode(500, new { message = "Error augmenting prompt", error = ex.Message });
+        }
+    }
+
+    [HttpGet("health/chroma")]
+    public async Task<ActionResult> ChromaHealth()
+    {
+        try
+        {
+            var result = await _ragService.GetIndexedFilesAsync();
+            return Ok(new { chromaReachable = true, fileCount = result.FileCount, fileNames = result.FileNames });
+        }
+        catch
+        {
+            return StatusCode(503, new { chromaReachable = false });
         }
     }
 }

@@ -1,0 +1,34 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Build
+bin/
+obj/
+*.dll
+*.exe
+
+# IDE
+.vscode
+.idea
+*.sln.user
+*.user
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Dependencies (will be restored in container)
+packages/
+
+# Tests
+tests/
+test/
+
+# Misc
+.env
+.env.local
+TODO.md
+README.md

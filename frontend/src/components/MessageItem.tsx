@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { Message } from "../types/chat";
 
 interface MessageItemProps {
@@ -15,8 +16,8 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
         {isUser ? (
           <p>{message.content}</p>
         ) : (
-          <div className="prose prose-sm max-w-none">
-            <ReactMarkdown>{message.content}</ReactMarkdown>
+          <div className="markdown">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.content}</ReactMarkdown>
           </div>
         )}
         <time dateTime={message.timestamp.toISOString()}>{message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</time>

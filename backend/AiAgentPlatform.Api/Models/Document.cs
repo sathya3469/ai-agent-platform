@@ -25,5 +25,12 @@ public class DocumentUploadResponse
     public required string FileName { get; set; }
     public int ChunksCreated { get; set; }
     public DateTime UploadedAt { get; set; }
+    public int Progress { get; set; }
     public string Message { get; set; } = "Document uploaded and indexed successfully";
+}
+
+public class DocumentFileInventoryResponse
+{
+    public int FileCount { get; set; }
+    public List<string> FileNames { get; set; } = new();
 }

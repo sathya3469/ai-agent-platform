@@ -15,7 +15,7 @@ export const InputBox: React.FC<InputBoxProps> = ({ onSend, disabled }) => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -44,7 +44,7 @@ export const InputBox: React.FC<InputBoxProps> = ({ onSend, disabled }) => {
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value.slice(0, 2000))}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
           placeholder="Ask me anything... I'll search your uploaded documents and provide context-aware responses."
           disabled={disabled}
           rows={1}
@@ -54,7 +54,9 @@ export const InputBox: React.FC<InputBoxProps> = ({ onSend, disabled }) => {
           className={`send-button ${isButtonDisabled ? '' : ''}`}
           onClick={handleSend}
           disabled={isButtonDisabled}
+          type="button"
           title={isButtonDisabled ? 'Type a message to send' : 'Send message (Enter)'}
+          aria-label="Send message"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5.951-2.976 5.951 2.976a1 1 0 001.169-1.409l-7-14z" />

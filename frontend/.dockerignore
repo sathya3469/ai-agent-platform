@@ -1,0 +1,32 @@
+# Source control
+.git
+.gitignore
+
+# Dependencies (will be installed in container)
+node_modules/
+npm-debug.log
+yarn.lock
+
+# Build output (will be rebuilt)
+build/
+dist/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+coverage/
+.test-cache
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Misc
+README.md
+TODO.md

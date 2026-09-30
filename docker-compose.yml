@@ -1,0 +1,106 @@
+
+services:
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-agent-backend
+    ports:
+      - "5000:5000"
+      - "7005:7005"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://+:5000
+      - LLM__Endpoint=http://ollama:11434
+      - LLM__Model=qwen2.5-coder:3b-instruct
+      - Ollama__BaseUrl=http://ollama:11434
+      - Ollama__EmbeddingModel=embeddinggemma
+      - ChromaDB__Url=http://chromadb:8000
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/ai_agent
+    depends_on:
+      - ollama
+      - chromadb
+      - postgres
+    networks:
+      - ai-network
+    volumes:
+      # Mount the publish output only; the container's app root is the published
+      # app, and overlaying source dirs breaks the runtime.
+      - ai-agent-logs:/app/logs
+    restart: unless-stopped
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-agent-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # Optional: only set when the frontend is served from a host with no /api
+      # proxy in front of it. nginx.conf already proxies /api to the backend, so
+      # leaving this unset makes the frontend use same-origin relative URLs.
+      - VITE_API_URL=
+    depends_on:
+      - backend
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+  # Ollama (LLM)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ai-agent-ollama
+    ports:
+      - "11434:11434"
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - ai-network
+    restart: unless-stopped
+    command: serve
+
+  # ChromaDB (Vector Database)
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: ai-agent-chromadb
+    ports:
+      - "8000:8000"
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/data
+    volumes:
+      - chromadb-data:/chroma/data
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+  # PostgreSQL (Database)
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-agent-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ai_agent
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+volumes:
+  ollama-data:
+  chromadb-data:
+  postgres-data:
+  ai-agent-logs:
+
+networks:
+  ai-network:
+    driver: bridge
